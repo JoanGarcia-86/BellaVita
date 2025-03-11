@@ -239,12 +239,12 @@ h1 {
   transform-origin: center;
 }
 
-.articulo:hover {
-  transform: scale(1.01);
-}
-
 .rotate {
   transform: rotateY(180deg);
+}
+
+.articulo:hover {
+  transform: scale(1.01);
 }
 
 /* ******** RESPONSIVE ******** */

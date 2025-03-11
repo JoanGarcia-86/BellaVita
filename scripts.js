@@ -66,31 +66,35 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("scroll", showSectionsOnScroll);
   showSectionsOnScroll(); // Para mostrar las secciones ya visibles al cargar
 
-    function rotateAndChange(element) {
-      let img = element.querySelector("img"); // Encuentra la imagen dentro del artículo
-      let imageMap = {
-        "Assets/Imagenes/Pelo1.jpeg": "Assets/Imagenes/Pelo1.1.jpeg",
-        "Assets/Imagenes/Pelo1.1.jpeg": "Assets/Imagenes/Pelo1.jpeg",
-        "Assets/Imagenes/Pelo2.jpeg": "Assets/Imagenes/Pelo2.1.jpeg",
-        "Assets/Imagenes/Pelo2.1.jpeg": "Assets/Imagenes/Pelo2.jpeg",
-        "Assets/Imagenes/Pelo3.jpeg": "Assets/Imagenes/Pelo3.1.jpeg",
-        "Assets/Imagenes/Pelo3.1.jpeg": "Assets/Imagenes/Pelo3.jpeg"
-      };
-   
-      // Obtiene el nombre del archivo actual sin la ruta completa
-      let currentImage = img.src.split("/").pop();
-
-      // Agrega la rotación
-      img.classList.add("rotate");
-
-      // Espera 300ms para cambiar la imagen mientras gira
+  function rotateAndChange(element) {
+    let img = element.querySelector("img"); // Encuentra la imagen dentro del artículo
+    let imageMap = {
+      "Pelo1.jpeg": "Pelo1.1.jpeg",
+      "Pelo1.1.jpeg": "Pelo1.jpeg",
+      "Pelo2.jpeg": "Pelo2.1.jpeg",
+      "Pelo2.1.jpeg": "Pelo2.jpeg",
+      "Pelo3.jpeg": "Pelo3.1.jpeg",
+      "Pelo3.1.jpeg": "Pelo3.jpeg"
+    };
+  
+    // Obtiene el nombre del archivo actual sin la ruta completa
+    let currentImage = img.src.split("/").pop();
+  
+    // Verifica si la imagen actual está en el mapa
+    if (!imageMap[currentImage]) return;
+  
+    // Agrega la rotación
+    img.classList.add("rotate");
+  
+    // Espera 300ms para cambiar la imagen mientras gira
+    setTimeout(() => {
+      // Cambia la imagen
+      img.src = img.src.replace(currentImage, imageMap[currentImage]);
+  
+      // Restablece la rotación después de otro pequeño tiempo
       setTimeout(() => {
-          img.src = `Assets/Imagenes/${imageMap[currentImage]}`;
-
-          // Restablece la rotación después de otro pequeño tiempo
-          setTimeout(() => {
-              img.classList.remove("rotate");
-          }, 300);
+        img.classList.remove("rotate");
       }, 300);
+    }, 300);
   }
 });
