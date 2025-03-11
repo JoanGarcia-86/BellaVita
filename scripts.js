@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
   
     // ******** FUNCIÓN PARA CAMBIAR EL ESTILO DEL ENCABEZADO AL HACER SCROLL ********
     window.addEventListener("scroll", function () {
-      if (window.scrollY > 50) {
+      if (window.scrollY > 10) {
         header.classList.add("scrolled");
       } else {
       }

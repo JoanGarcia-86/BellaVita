@@ -241,8 +241,6 @@ footer {
     width: 80%;
     margin-bottom: 2rem;
   }
-}
-@media (max-width: 980px) {
   .header_container {
     flex-direction: column;
     align-items: center;
