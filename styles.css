@@ -89,8 +89,6 @@ body{
   font-size: 1rem;
   margin: 0 0.375rem;
   transition: color 0.3s ease;
-  /* color: #c9a227; */
-  /* text-shadow: 0.25px 0.25px 0 #000000, -0.25px 0.25px 0 #000000, 0.25px -0.25px 0 #000000, -0.25px -0.25px 0 #000000; */
 }
 
 .header_container.scrolled .header_link {
@@ -120,43 +118,6 @@ body{
   transform: scale(1.1);
 }
 
-/* ******** RESPONSIVE DE LA CABECERA DE LA PÁGINA ******** */
-@media (max-width: 768px) {
-  .header_container {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 1vh 1em;
-    gap: 1vh;
-    height: auto;
-  }
-
-  .header_logo {
-    width: 5vh;
-  }
-
-  .header_nav {
-    flex-direction: row;
-    align-items: center;
-    gap: 1vh;
-  }
-
-  .header_link {
-    font-size: 1.5vh;
-    margin: 0.5vh 0;
-  }
-
-  .header_container_icons {
-    flex-direction: row;
-    justify-content: center;
-    gap: 1vh;
-  }
-
-  .header_icon {
-    width: 3vh;
-    height: 3vh;
-  }
-}
 /* ******** ESTILOS DE LA PORTADA ******** */
 .main_portada {
   position: relative;
@@ -231,7 +192,6 @@ body{
     margin: 0 auto;
     margin-top: 20px;
     padding: 10px;
-    /*background: linear-gradient(90deg, #abf89f, #d5bce4);*/
     background-color: #abf89f;  
     box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
