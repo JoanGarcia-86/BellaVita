@@ -341,6 +341,49 @@ footer {
   box-shadow: 0 -0.125em 0.25em rgba(0, 0, 0, 0.1);
   font-size: 0.7rem;
 }
+
+.info_producto {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: #e8e8e8;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  padding: 1rem;
+  border-radius: 5px;
+  pointer-events: none;
+}
+
+.info_producto.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.info_producto h2 {
+  margin-bottom: 1em;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.enlace_producto {
+  font-size: 1.25rem;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  background-color: transparent;
+  border: 2px solid #ffffff;
+  border-radius: 50px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.enlace_producto:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
 .seccion_articulos {
   display: flex;
   justify-content:space-between;
