@@ -228,7 +228,7 @@ h1 {
   width: 30%;
   transition: transform 0.3s ease;
   cursor: pointer;
-  perspective: 1000px; /* Da efecto 3D */
+  perspective: 1000px;
 }
 
 .articulo img {
@@ -236,7 +236,7 @@ h1 {
   height: 700px;
   border-radius: 8px;
   transition: transform 0.6s ease-in-out;
-  transform-origin: center;
+  transform-style: preserve-3d;
 }
 
 .rotate {
@@ -292,3 +292,4 @@ h1 {
     height: 3vh;
   }
 }
+

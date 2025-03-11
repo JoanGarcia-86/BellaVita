@@ -74,27 +74,30 @@ document.addEventListener("DOMContentLoaded", function () {
       "Pelo2.jpeg": "Pelo2.1.jpeg",
       "Pelo2.1.jpeg": "Pelo2.jpeg",
       "Pelo3.jpeg": "Pelo3.1.jpeg",
-      "Pelo3.1.jpeg": "Pelo3.jpeg"
+      "Pelo3.1.jpeg": "Pelo3.jpeg",
     };
-  
+
     // Obtiene el nombre del archivo actual sin la ruta completa
     let currentImage = img.src.split("/").pop();
-  
+
     // Verifica si la imagen actual está en el mapa
     if (!imageMap[currentImage]) return;
-  
+
     // Agrega la rotación
-    img.classList.add("rotate");
-  
+    img.classList.toggle("rotate");
+
     // Espera 300ms para cambiar la imagen mientras gira
     setTimeout(() => {
       // Cambia la imagen
       img.src = img.src.replace(currentImage, imageMap[currentImage]);
-  
-      // Restablece la rotación después de otro pequeño tiempo
-      setTimeout(() => {
-        img.classList.remove("rotate");
-      }, 300);
     }, 300);
   }
+
+  // Vincula la función a los artículos
+  const articulos = document.querySelectorAll(".articulo");
+  articulos.forEach((articulo) => {
+    articulo.addEventListener("click", function () {
+      rotateAndChange(this);
+    });
+  });
 });
