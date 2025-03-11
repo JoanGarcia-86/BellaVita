@@ -210,7 +210,7 @@ footer {
 }
 .seccion_articulos {
   display: flex;
-  justify-content: space-between;
+  justify-content:space-between;
   padding: 2rem;
   background-color: #abf89f;
 }
@@ -232,8 +232,8 @@ h1 {
 }
 
 .articulo img {
-  width: 400px;
-  height: 700px;
+  width: 250px;
+  height: 500px;
   border-radius: 8px;
   transition: transform 0.6s ease-in-out;
   transform-style: preserve-3d;
