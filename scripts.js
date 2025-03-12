@@ -69,12 +69,12 @@ document.addEventListener("DOMContentLoaded", function () {
   function rotateAndChange(element) {
     let img = element.querySelector("img"); // Encuentra la imagen dentro del artículo
     let imageMap = {
-      "Pelo1.jpeg": "Pelo1.1.jpeg",
-      "Pelo1.1.jpeg": "Pelo1.jpeg",
-      "Pelo2.jpeg": "Pelo2.1.jpeg",
-      "Pelo2.1.jpeg": "Pelo2.jpeg",
-      "Pelo3.jpeg": "Pelo3.1.jpeg",
-      "Pelo3.1.jpeg": "Pelo3.jpeg",
+      "Pelo1.png": "Pelo1.1.png",
+      "Pelo1.1.png": "Pelo1.png",
+      "Pelo2.png": "Pelo2.1.png",
+      "Pelo2.1.png": "Pelo2.png",
+      "Pelo3.png": "Pelo3.1.png",
+      "Pelo3.1.png": "Pelo3.png",
     };
 
     // Obtiene el nombre del archivo actual sin la ruta completa
