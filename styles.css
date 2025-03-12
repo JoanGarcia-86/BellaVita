@@ -537,9 +537,39 @@ footer {
   .nosotros_description{
     font-size:x-small
   }
-  
+
   .nosotros_title{
     font-size:medium
+  }
+
+  .footer_seccion p a {
+    font-size: large;
+  }
+
+  .header_container{
+    flex-direction: column;
+    align-content: center;
+  }
+
+  .header_link{
+    font-size: 1.5rem;
+  }
+
+  .header_link1{
+    font-size: 1.5rem;
+  }
+
+  .header_icon{
+    font-size: 1.5rem;
+  }
+
+  .header_logo img{
+    width: 100px ;
+    height: 100px ;
+  }
+
+  .header_nav {
+    justify-content: center;
   }
 }
 
