@@ -571,5 +571,13 @@ footer {
   .header_nav {
     justify-content: center;
   }
+
+  .texto_portada h1{
+    font-size: 7rem;
+  }
+
+  .enlace_producto {
+    font-size: 3rem;
+  }
 }
 
