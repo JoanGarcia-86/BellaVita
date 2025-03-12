@@ -6,6 +6,26 @@
 body{
   background-color: #abf89f;
 }
+
+@font-face {
+  font-family: "Belleza";
+  src: url("Assets\Fuente\Belleza\Belleza-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "DM Sans";
+  src: url("Assets\Fuente\DM_Sans/static/DMSans-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Playfair";
+  src: url("Assets\Fuente\Playfair_Display/static/PlayfairDisplay-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
 .header_container {
   position: fixed;
   top: 0;
@@ -47,33 +67,12 @@ body{
 .header_nav .header_link {
   color: #000000;
   text-decoration: none;
-  transition: color 0.3s ease-in-out;
-}
-
-.header_container.scrolled .header_link {
-  color: black;
-}
-
-.header_container:hover .header_link {
-  color: black;
 }
 
 .header_nav .header_link1 {
   color: #ff0000;
   text-decoration: none;
-  transition: color 0.3s ease-in-out;
 }
-
-.header_container.scrolled .header_link1 {
-  color: rgb(255, 0, 0);
-}
-
-.header_container:hover .header_link1 {
-  color: rgb(255, 0, 0);
-}
-/* .header_nav .header_link:hover {
-  color: #ff4000;
-} */
 
 .header_logo {
   display: flex;
@@ -109,7 +108,7 @@ body{
   text-decoration: none;
   font-size: 1rem;
   margin: 0 0.375rem;
-  transition: color 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .header_link1 {
@@ -117,24 +116,24 @@ body{
   text-decoration: none;
   font-size: 1rem;
   margin: 0 0.375rem;
-  transition: color 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .header_container.scrolled .header_link {
   text-shadow: none;
 }
 
-/* .header_link:hover {
-  color: #ff6347;
-} */
+.header_link:hover {
+  transform: scale(1.1);
+}
 
 .header_container.scrolled .header_link1 {
   text-shadow: none;
 }
 
-/* .header_link1:hover {
-  color: #ff6347;
-} */
+.header_link1:hover {
+  transform: scale(1.1);
+}
 
 .header_container_icons {
   display: flex;
@@ -266,7 +265,7 @@ body{
 }
 
 footer {
-  font-family: "Open Sans";
+  font-family: "DM Sans";
 }
 
 .footer_container {
