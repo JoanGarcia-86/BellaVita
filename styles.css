@@ -153,14 +153,14 @@ body{
   transform: scale(1.1);
 }
 
-/* ******** ESTILOS DE LA PORTADA ******** */
+/*ESTILOS DE LA PORTADA*/
 .main_portada {
   position: relative;
   height: 100vh;
   overflow: hidden;
 }
 
-/* ******** ESTILOS DEL CARRUSEL ******** */
+/* ESTILOS DEL CARRUSEL */
 .carrusel {
   position: relative;
   width: 100%;
@@ -544,7 +544,7 @@ footer {
   width: 100%;
 }
 
-/* ******** RESPONSIVE ******** */
+/*RESPONSIVE*/
 @media (max-width: 768px) {
   .seccion_articulos {
     flex-direction: column;
