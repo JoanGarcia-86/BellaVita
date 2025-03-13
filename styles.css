@@ -306,7 +306,7 @@ body{
 .nosotros_description {
   font-size: 1.2rem;
   color: #555;
-  line-height: 1.6;
+  /* line-height: 1.6; */
   margin-bottom: 1.5rem;
   margin-left: 10px;
 }
