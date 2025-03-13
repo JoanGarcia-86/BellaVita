@@ -483,6 +483,55 @@ footer {
   transform: scale(1.01);
 }
 
+/*PRODUCTOS*/
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  background-color: #ffff;
+  padding: 20px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  border-radius: 8px;
+  margin: 20px 40px 20px 40px;
+}
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(200, 200, 200, 0.8);
+  padding: 10px;
+  font-size: 30px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+.grid-item img{
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 8px;
+}
+.grid-item:hover{
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  transform: translateY(-5px);
+}
+.titulo-productos{
+  text-align: center;
+  width: 80%;
+  font-size: 2.5em;
+  font-weight: bold;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 80px;
+  padding: 10px;
+  background: linear-gradient(90deg, #abf89f, #ffff);
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
 /* ******** RESPONSIVE ******** */
 @media (max-width: 768px) {
   .seccion_articulos {
