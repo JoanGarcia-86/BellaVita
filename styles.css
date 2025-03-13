@@ -538,6 +538,10 @@ footer {
   color: #ff0000;
 }
 
+.en_desarrollo img{
+  background-size: cover;
+}
+
 /* ******** RESPONSIVE ******** */
 @media (max-width: 768px) {
   .seccion_articulos {
