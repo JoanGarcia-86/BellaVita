@@ -488,7 +488,7 @@ footer {
 .grid-container {
   display: grid;
   grid-template-columns: auto auto auto auto;
-  background-color: #ffff;
+  background-color: #8af679;
   padding: 20px;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
@@ -499,11 +499,12 @@ footer {
   background-color: rgba(255, 255, 255, 0.8);
   border: 1px solid rgba(200, 200, 200, 0.8);
   padding: 10px;
-  font-size: 30px;
+  font-size: 20px;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  font-family: "Belleza";
   transition: box-shadow 0.3s ease, transform 0.3s ease;
   box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
@@ -527,8 +528,9 @@ footer {
   margin: 0 auto;
   margin-top: 80px;
   padding: 10px;
-  background: linear-gradient(90deg, #abf89f, #ffff);
-  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
+  font-family: "Belleza";
+  /* background-color: #abf89f ; */
+  background: linear-gradient(90deg, #abf89f, #8af679);
   border-radius: 8px;
 }
 
@@ -628,5 +630,19 @@ footer {
   .enlace_producto {
     font-size: 3rem;
   }
+
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-item{
+    width: auto;
+    height: auto;
+  }
+
+  .titulo-productos{
+    margin-top: 200px;
+  }
+  
 }
 
