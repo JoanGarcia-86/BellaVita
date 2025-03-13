@@ -540,6 +540,8 @@ footer {
 
 .en_desarrollo img{
   background-size: cover;
+  justify-content: center;
+  width: 100%;
 }
 
 /* ******** RESPONSIVE ******** */
