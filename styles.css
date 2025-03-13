@@ -633,11 +633,11 @@ footer {
 
   .grid-container {
     grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 123px;
   }
 
   .grid-item{
-    width: auto;
-    height: auto;
+    font-size: 2em;
   }
 
   .titulo-productos{
