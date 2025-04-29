@@ -1,0 +1,332 @@
+/* Estilos para la página de reseñas */
+
+/* Banner y estadísticas de valoración */
+.resenas-banner {
+    background-color: #fcfbf5; /* Cambiado a crema suave */
+    padding: 40px 20px;
+    border-radius: 10px;
+    margin: 80px auto 30px;
+    max-width: 1200px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  .resenas-banner h1 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    color: #333;
+    font-family: "Belleza", sans-serif;
+  }
+  
+  .stats-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  
+  .rating-stats {
+    display: flex;
+    gap: 40px;
+    flex: 2;
+  }
+  
+  .average-rating {
+    text-align: center;
+  }
+  
+  .big-rating {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #333;
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .stars {
+    color: #FFD700;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+  }
+  
+  .average-rating p {
+    color: #666;
+    font-size: 0.9rem;
+  }
+  
+  .rating-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+  }
+  
+  .rating-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .rating-bar span {
+    font-size: 0.9rem;
+    color: #666;
+    min-width: 15px;
+  }
+  
+  .bar-container {
+    flex: 1;
+    height: 8px;
+    background-color: #f0efe5; /* Fondo de barra en tono crema más oscuro */
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  .bar {
+    height: 100%;
+    background-color: #abf89f; /* Mantenemos el verde de la marca */
+    border-radius: 4px;
+  }
+  
+  .write-review {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .write-review p {
+    margin-bottom: 15px;
+    font-size: 1rem;
+    color: #444;
+  }
+  
+  .review-btn {
+    padding: 12px 24px;
+    background-color: #abf89f;
+    color: #333;
+    border: none;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .review-btn:hover {
+    background-color: #9ed98e;
+    transform: translateY(-2px);
+  }
+  
+  /* Contenedor de reseñas */
+  .reviews-container {
+    max-width: 1200px;
+    margin: 40px auto 0;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+  
+  /* Tarjeta de reseña */
+  .review-card {
+    background-color: #fcfbf5; /* Cambiado a crema suave */
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border-left: 4px solid #ddd;
+    transition: transform 0.3s ease;
+  }
+  
+  .review-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .review-card.positive {
+    border-left-color: #abf89f; /* Verde para positivas */
+  }
+  
+  .review-card.neutral {
+    border-left-color: #ffd166; /* Amarillo para neutrales */
+  }
+  
+  .review-card.negative {
+    border-left-color: #ff6b6b; /* Rojo para negativas */
+  }
+  
+  .review-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+  }
+  
+  .reviewer-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .avatar {
+    width: 45px;
+    height: 45px;
+    background-color: #abf89f; /* Mantenemos color de marca */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #444;
+  }
+  
+  .reviewer-details h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  .verification {
+    font-size: 0.8rem;
+    color: #666;
+  }
+  
+  .verification i {
+    color: #7ed069;
+    margin-right: 5px;
+  }
+  
+  .review-date {
+    font-size: 0.8rem;
+    color: #777;
+    margin-top: 5px;
+  }
+  
+  .product-info {
+    margin-bottom: 15px;
+  }
+  
+  .product-badge {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #f5f4e8; /* Fondo badge en tono crema más oscuro */
+    border-radius: 20px;
+    font-size: 0.8rem;
+    color: #555;
+  }
+  
+  .review-title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .review-content {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 15px;
+  }
+  
+  .review-images {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+  }
+  
+  .review-images img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    border: 2px solid #f5f4e8; /* Borde en tono crema */
+  }
+  
+  .review-images img:hover {
+    transform: scale(1.05);
+  }
+  
+  .review-footer {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .helpful-btn, .report-btn {
+    background-color: #f5f4e8; /* Fondo en tono crema */
+    border: 1px solid #e8e6d5;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    color: #555;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .helpful-btn:hover {
+    background-color: #e8e6d5;
+    color: #333;
+  }
+  
+  .report-btn:hover {
+    background-color: #ffe6e6;
+    color: #ff6b6b;
+  }
+  
+  /* Paginación */
+  .review-pagination {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: 40px 0 60px;
+  }
+  
+  .review-pagination a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #fcfbf5; /* Crema suave */
+    color: #333;
+    text-decoration: none;
+    border-radius: 50%;
+    font-weight: 600;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+  }
+  
+  .review-pagination a:hover,
+  .review-pagination a.active {
+    background-color: #abf89f;
+    color: #333;
+  }
+  
+  /* Responsive */
+  @media (max-width: 992px) {
+    .rating-stats {
+      flex-direction: column;
+      gap: 20px;
+    }
+    
+    .stats-container {
+      flex-direction: column;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .review-header {
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    .review-rating {
+      align-self: flex-start;
+    }
+    
+    .review-footer {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }

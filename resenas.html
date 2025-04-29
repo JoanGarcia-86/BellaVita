@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>BellaVita</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./CSS/styles.css">
+    <link rel="stylesheet" href="./CSS/reseñas.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Belleza&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-    <script defer src="scripts.js"></script>
+    <script defer src="./JavaScript/scripts.js"></script>
 </head>
 <body>
   <header>
     <div class="header_container">
       <div class="header_logo">
-        <a href="index.html"> <img src="Assets/Imagenes/Diseño_sin_título-removebg-preview.png" alt="Logo de BellaVita" /> </a>
+        <a href="index.html"> <img src="Assets/Imagenes/logo-marca.png" alt="Logo de BellaVita" /> </a>
       </div>
       <nav class="header_nav">
         <a class="header_link" href="productos.html">Productos</a>
@@ -23,103 +24,253 @@
         <a class="header_link" href="tips.html">Tips</a>
         &nbsp
         <a class="header_link" href="resenas.html">Reseñas</a>
-
-
       </nav>
       <div class="header_container_icons">
         <a class="header_link" href="index.html">
-          <img class="header_icon" src="Assets/Imagenes/lupa.png" alt="Buscar" />
+          <img class="header_icon" src="Assets/iconos/simbolo_euro.png" alt="Euro" />
         </a>
         <a class="header_link" href="index.html">
-          <img class="header_icon" src="Assets/Imagenes/llamar.png" alt="Telefono" />
+          <img class="header_icon" src="Assets/iconos/lupa.png" alt="Buscar" />
         </a>
         <a class="header_link" href="index.html">
-          <img class="header_icon" src="Assets/Imagenes/red-heart_2764-fe0f.png" alt="Favoritos" />
+          <img class="header_icon" src="Assets/iconos/llamar.png" alt="Telefono" />
         </a>
         <a class="header_link" href="index.html">
-          <img class="header_icon" src="Assets/Imagenes/carrito-de-compras.png" alt="Cesta de compras" />
+          <img class="header_icon" src="Assets/iconos/red-heart_2764-fe0f.png" alt="Favoritos" />
         </a>
         <a class="header_link" href="index.html">
-          <img class="header_icon" src="Assets/Imagenes/espana.png" alt="Lenguaje" />
-        </a>
-        <a class="header_link" href="index.html">
-          <img class="header_icon" src="Assets/Imagenes/usuario.png" alt="Cuenta" />
+          <img class="header_icon" src="Assets/iconos/carrito-de-compras.png" alt="Cesta de compras" />
         </a>
       </div>
     </div>
   </header>
   <main>
-    <section class="en_desarrollo">
-        <img src="Assets/Imagenes/under-construction-2891888_1280.webp">
-    </section>
+    <!-- Banner de reseñas -->
+  <div class="resenas-banner">
+    <h1>RESEÑAS DE NUESTROS CLIENTES</h1>
+    <div class="stats-container">
+      <div class="rating-stats">
+        <div class="average-rating">
+          <span class="big-rating">4.3</span>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+          </div>
+          <p>Basado en 243 reseñas</p>
+        </div>
+        
+        <div class="rating-bars">
+          <div class="rating-bar">
+            <span>5</span>
+            <div class="bar-container">
+              <div class="bar" style="width: 70%;"></div>
+            </div>
+            <span>70%</span>
+          </div>
+          <div class="rating-bar">
+            <span>4</span>
+            <div class="bar-container">
+              <div class="bar" style="width: 15%;"></div>
+            </div>
+            <span>15%</span>
+          </div>
+          <div class="rating-bar">
+            <span>3</span>
+            <div class="bar-container">
+              <div class="bar" style="width: 5%;"></div>
+            </div>
+            <span>5%</span>
+          </div>
+          <div class="rating-bar">
+            <span>2</span>
+            <div class="bar-container">
+              <div class="bar" style="width: 7%;"></div>
+            </div>
+            <span>7%</span>
+          </div>
+          <div class="rating-bar">
+            <span>1</span>
+            <div class="bar-container">
+              <div class="bar" style="width: 3%;"></div>
+            </div>
+            <span>3%</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="write-review">
+        <p>¿Has probado nuestros productos?</p>
+        <button class="review-btn">Escribe tu reseña</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lista de reseñas -->
+  <div class="reviews-container">
+    <!-- Reseña positiva 1 -->
+    <div class="review-card positive">
+      <div class="review-header">
+        <div class="reviewer-info">
+          <div class="avatar">LM</div>
+          <div class="reviewer-details">
+            <h3>Laura Martínez</h3>
+            <p class="verification"><i class="fas fa-check-circle"></i> Compra verificada</p>
+          </div>
+        </div>
+        <div class="review-rating">
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p class="review-date">12 abril, 2024</p>
+        </div>
+      </div>
+      <div class="product-info">
+        <span class="product-badge">Serum capilar versión 1</span>
+      </div>
+      <h4 class="review-title">¡Increíble cambio en mi cabello!</h4>
+      <p class="review-content">Llevaba años probando todo tipo de productos para mi cabello seco y dañado. Nada parecía funcionar hasta que encontré este serum. Después de solo dos semanas de uso, mi cabello está más suave, brillante y manejable. Además, me encanta que sea un producto natural y que la marca se preocupe tanto por el medio ambiente. ¡Definitivamente compraré más productos de BellaVita!</p>
+      <div class="review-images">
+        <img src="./Assets/Imagenes/review-image-1.jpg" alt="Imagen de reseña">
+        <img src="./Assets/Imagenes/review-image-2.jpg" alt="Imagen de reseña">
+      </div>
+      <div class="review-footer">
+        <button class="helpful-btn"><i class="far fa-thumbs-up"></i> Útil (24)</button>
+        <button class="report-btn"><i class="far fa-flag"></i> Reportar</button>
+      </div>
+    </div>
+
+    <!-- Reseña media 1 -->
+    <div class="review-card neutral">
+      <div class="review-header">
+        <div class="reviewer-info">
+          <div class="avatar">CG</div>
+          <div class="reviewer-details">
+            <h3>Carlos González</h3>
+            <p class="verification"><i class="fas fa-check-circle"></i> Compra verificada</p>
+          </div>
+        </div>
+        <div class="review-rating">
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
+            <i class="far fa-star"></i>
+          </div>
+          <p class="review-date">5 abril, 2024</p>
+        </div>
+      </div>
+      <div class="product-info">
+        <span class="product-badge">Acondicionador BellaVita</span>
+      </div>
+      <h4 class="review-title">Bueno, pero esperaba más</h4>
+      <p class="review-content">El acondicionador tiene un aroma agradable y la textura es buena. Mi cabello queda suave después de usarlo, pero no he notado una gran diferencia comparado con otros productos que he usado antes. Tal vez con más tiempo de uso vea mejores resultados. Por ahora le doy 3 estrellas, pero podría mejorar mi valoración si veo cambios significativos a largo plazo.</p>
+      <div class="review-footer">
+        <button class="helpful-btn"><i class="far fa-thumbs-up"></i> Útil (9)</button>
+        <button class="report-btn"><i class="far fa-flag"></i> Reportar</button>
+      </div>
+    </div>
+
+    <!-- Reseña negativa 1 -->
+    <div class="review-card negative">
+      <div class="review-header">
+        <div class="reviewer-info">
+          <div class="avatar">JP</div>
+          <div class="reviewer-details">
+            <h3>Juan Pérez</h3>
+            <p class="verification"><i class="fas fa-check-circle"></i> Compra verificada</p>
+          </div>
+        </div>
+        <div class="review-rating">
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
+            <i class="far fa-star"></i>
+            <i class="far fa-star"></i>
+          </div>
+          <p class="review-date">28 marzo, 2024</p>
+        </div>
+      </div>
+      <div class="product-info">
+        <span class="product-badge">Loción capilar</span>
+      </div>
+      <h4 class="review-title">No funcionó para mi tipo de cabello</h4>
+      <p class="review-content">Compré esta loción con grandes expectativas tras leer las reseñas, pero lamentablemente no ha funcionado bien con mi cabello rizado y grueso. Creo que podría mejorar si ofrecieran versiones específicas para diferentes tipos de cabello. La calidad del producto parece buena y el envase es bonito, por lo que le doy 2 estrellas. Quizás funcione mejor para personas con cabello más fino o liso.</p>
+      <div class="review-footer">
+        <button class="helpful-btn"><i class="far fa-thumbs-up"></i> Útil (15)</button>
+        <button class="report-btn"><i class="far fa-flag"></i> Reportar</button>
+      </div>
+    </div>
+
+    <!-- Puedes añadir más reseñas aquí siguiendo el mismo formato -->
+  </div>
+
+  <!-- Paginación -->
+  <div class="review-pagination">
+    <a href="#" class="active">1</a>
+    <a href="#">2</a>
+    <a href="#">3</a>
+    <a href="#">4</a>
+    <a href="#" class="next"><i class="fas fa-chevron-right"></i></a>
+  </div>
   </main>
-  <footer>
-    <div class="footer_container">
+  <!-- Nuevo Footer -->
+  <footer class="new-footer">
+    <div class="footer-container">
+      <!-- Sección de Newsletter -->
+      <div class="footer-newsletter">
+        <h2>NO TE PIERDAS NADA</h2>
+        <div class="newsletter-form">
+          <input type="email" placeholder="Email" class="newsletter-input">
+          <button class="newsletter-button">Suscríbete</button>
+        </div>
+        <p class="privacy-notice">Al unirse acepta las <a href="#">políticas de privacidad</a> y recibir comunicaciones de BellaVita.</p>
+        <div class="payment-methods">
+          <img src="./Assets/iconos/visa.png" alt="Visa">
+          <img src="./Assets/iconos/mastercard.png" alt="Mastercard">
+          <img src="./assets/iconos/amex.png" alt="American Express">
+          <img src="./Assets/iconos/diners-club.png" alt="Diners Club">
+          <img src="./Assets/iconos/jbc.png" alt="JBC">
+          <img src="./Assets/iconos/discovernet.png" alt="Discover Network">
+          <img src="./Assets/iconos/paypal.png" alt="PayPal">
+        </div>
+      </div>
+
       <!-- Sección de Contacto -->
-      <div class="footer_seccion footer_contacto">
-        <h3>Contacta</h3>
-        <p>
-          <a href="tel:+34763982887">
-            <img src="Assets/Imagenes/llamar.png" alt="Teléfono" class="footer_icono" /> Llámanos al +34 76 55 45 34
-          </a>
-        </p>
-        <p>
-          <a href="https://wa.me/34634253265">
-            <img src="Assets/Imagenes/Whatsapp.png" alt="WhatsApp" class="footer_icono" /> Contactanos por WhatsApp
-          </a>
-        </p>
-        <p>
-          <a href="mailto:contacto@niva.com">
-            <img src="Assets/Imagenes/Correo.png" alt="Correo electrónico" class="footer_icono" /> Envíanos un correo electrónico
-          </a>
-        </p>
-        <p>
-          <a href="index.html">
-            <img src="Assets/Imagenes/Pin.png" alt="Mapa" class="footer_icono" /> Encuentranos
-          </a>
-        </p>
-        <p>
-        </p>
+      <div class="footer-contact">
+        <h3>Contacto</h3>
+        <p>+34 627 35 64 73</p>
+        <p><a href="mailto:bellavitaes@gmail.com">bellavitaes@gmail.com</a></p>
+        <p><a href="#">Atención al cliente</a></p>
       </div>
-      <!-- Sección de Atención al Cliente -->
-      <div class="footer_seccion footer_atencion">
-        <h3>Atención al Cliente</h3>
-        <p><a href="index.html">Todos nuestros servicios</a></p>
-        <p><a href="index.html">Preguntas frecuentes</a></p>
-        <p><a href="index.html">Rastrear pedidos y solicitudes</a></p>
-        <p><a href="index.html">Recomendaciones de Productos & Compras</a></p>
-      </div>
-      <!-- Sección de Corporativo -->
-      <div class="footer_seccion footer_corporativo">
-        <h3>Enlaces de Interés</h3>
-        <p><a href="index.html">Black Friday 2025</a></p>
-        <p><a href="index.html">Rebajas 2025</a></p>
-        <p><a href="index.html">Condiciones particulares de BellaVita</a></p>
-        <p><a href="index.html">Envío y devoluciones</a></p>
-      </div>
-      <!-- Sección de Legal -->
-      <div class="footer_seccion footer_legal">
-        <h3>Legal</h3>
-        <p><a href="index.html">Política De Privacidad Y Cookies</a></p>
-        <p><a href="index.html">Configuración De Cookies</a></p>
-        <p><a href="index.html">Área Legal</a></p>
+
+      <!-- Sección de Redes Sociales -->
+      <div class="footer-social">
+        <h3>Síguenos</h3>
+        <p>Instagram: <a href="#">bellavitaes</a></p>
+        <p>Facebook: <a href="#">bellavitaes</a></p>
+        <p>Tik tok: <a href="#">bellavitaes</a></p>
       </div>
     </div>
-    <!-- Sección de Redes Sociales -->
-    <div class="footer_redes">
-      <a href="https://www.youtube.com/">
-        <img class="footer_redes_icon" src="Assets/Imagenes/Youtube.png" alt="Youtube" />
-      </a>
-      <a href="https://www.instagram.com/">
-        <img class="footer_redes_icon" src="Assets/Imagenes/insta.png" alt="Instagram" />
-      </a>
-      <a href="https://www.pinterest.com/">
-        <img class="footer_redes_icon" src="Assets/Imagenes/Pinterest.png" alt="Pinterest" />
-      </a>
+
+    <!-- Sección Legal -->
+    <div class="footer-legal">
+      <a href="#">Aviso legal</a>
+      <span class="separator">·</span>
+      <a href="#">Políticas de cookies</a>
+      <span class="separator">·</span>
+      <a href="#">Políticas de privacidad</a>
+      <span class="separator">·</span>
+      <a href="#">Políticas de compra</a>
     </div>
-    <!-- Sección de Copyright -->
-    <div class="footer_copyright">&copy; 2024 BellaVita. Todos los derechos reservados.</div>
-  </footer>
-  
+  </footer>     
 </body>
 </html>

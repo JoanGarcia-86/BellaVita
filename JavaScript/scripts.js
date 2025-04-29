@@ -90,9 +90,9 @@ document.addEventListener("DOMContentLoaded", function () {
     setTimeout(() => {
       // Cambia la imagen
       img.src = img.src.replace(currentImage, imageMap[currentImage]);
-    }, 300);
+    }, 150);
   }
-
+  
   // Vincula la función a los artículos
   const articulos = document.querySelectorAll(".articulo");
   articulos.forEach((articulo) => {

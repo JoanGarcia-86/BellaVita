@@ -1,0 +1,197 @@
+/* Estilos para la página de productos */
+
+/* Banner de productos verdes */
+.productos-banner {
+  width: 100%;
+  height: 180px;
+  position: relative;
+  background-image: url('./imagenes_css/banner-margaritas.jpg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  margin: 80px auto 30px;
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.productos-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(171, 248, 159, 0.4); /* Verde translúcido */
+  z-index: 1;
+}
+
+.productos-banner h1 {
+  color: #000;
+  font-size: 2.8rem;
+  font-weight: 700;
+  position: relative;
+  z-index: 2;
+  font-family: "Belleza", sans-serif;
+  text-align: center;
+}
+
+.filtros-btn {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  z-index: 2;
+  font-family: "DM Sans", sans-serif;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.filtros-btn:hover {
+  background-color: #f5f5f5;
+}
+
+/* Grid de productos */
+.productos-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.producto-card {
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding-bottom: 15px;
+}
+
+.producto-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.producto-imagen {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f9f9f9;
+}
+
+.producto-imagen img {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+  transition: transform 0.5s ease;
+}
+
+.producto-card:hover .producto-imagen img {
+  transform: scale(1.05);
+}
+
+.producto-card h3 {
+  font-size: 1.1rem;
+  color: #333;
+  margin: 15px 0 8px;
+  padding: 0 15px;
+  font-family: "Belleza", sans-serif;
+  text-align: left;
+}
+
+.precio {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  padding: 0 15px;
+  font-family: "DM Sans", sans-serif;
+  text-align: left;
+}
+
+/* Paginación */
+.paginacion {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0 80px;
+  gap: 8px;
+}
+
+.paginacion a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  color: #333;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.paginacion a:hover,
+.paginacion a.active {
+  background-color: #abf89f;
+  color: #333;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .productos-grid {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 20px;
+  }
+  
+  .productos-banner {
+    margin: 80px 20px 30px;
+    width: calc(100% - 40px);
+  }
+}
+
+@media (max-width: 768px) {
+  .productos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .productos-banner h1 {
+    font-size: 2.2rem;
+  }
+  
+  .filtros-btn {
+    bottom: 15px;
+    top: auto;
+    transform: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .productos-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .productos-banner h1 {
+    font-size: 1.8rem;
+  }
+  
+  .productos-banner {
+    height: 150px;
+  }
+}
