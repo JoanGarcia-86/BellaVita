@@ -101,3 +101,42 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+  const dropdown = document.querySelector('.dropdown');
+  const dropdownBtn = dropdown.querySelector('.header_link');
+  const dropdownContent = dropdown.querySelector('.dropdown-content');
+  
+  // Función para mostrar/ocultar el menú al hacer clic
+  function toggleDropdown(e) {
+      e.preventDefault(); // Prevenir navegación al hacer clic
+      
+      if (dropdownContent.classList.contains('show')) {
+          // Si está visible, ocultarlo
+          dropdownContent.classList.remove('show');
+          setTimeout(() => {
+              dropdownContent.style.display = 'none';
+          }, 200);
+      } else {
+          // Si está oculto, mostrarlo
+          dropdownContent.style.display = 'block';
+          setTimeout(() => {
+              dropdownContent.classList.add('show');
+          }, 10);
+      }
+  }
+  
+  // Cerrar el menú si se hace clic fuera de él
+  function closeDropdown(e) {
+      if (!dropdown.contains(e.target)) {
+          dropdownContent.classList.remove('show');
+          setTimeout(() => {
+              dropdownContent.style.display = 'none';
+          }, 200);
+      }
+  }
+  
+  // Asignar eventos
+  dropdownBtn.addEventListener('click', toggleDropdown);
+  document.addEventListener('click', closeDropdown);
+});

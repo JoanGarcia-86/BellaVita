@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Galeria</title>
     <link rel="stylesheet" href="./CSS/styles.css">
+    <link rel="stylesheet" href="./CSS/productos.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Belleza&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
@@ -16,14 +17,26 @@
         <a href="index.html"> <img src="Assets/Imagenes/logo-marca.png" alt="Logo de BellaVita" /> </a>
       </div>
       <nav class="header_nav">
-        <a class="header_link" href="productos.html">Productos</a>
-        &nbsp
-        <a class="header_link1" href="promociones.html">Promociones</a>
-        &nbsp
-        <a class="header_link" href="tips.html">Tips</a>
-        &nbsp
-        <a class="header_link" href="resenas.html">Reseñas</a>
-      </nav>
+        <div class="dropdown">
+            <a class="header_link" href="#">PRODUCTOS</a>
+            <div class="dropdown-content">
+                <a href="productos_verdes.html" class="dropdown-item">
+                    <img src="Assets/Imagenes/imagen-dropdown-verde.png" alt="Productos Verdes">
+                    <span class="item-text">PRODUCTOS VERDES</span>
+                </a>
+                <a href="productos_lilas.html" class="dropdown-item">
+                    <img src="Assets/Imagenes/imagen-dropdown-lila.png" alt="Productos Lilas">
+                    <span class="item-text">POR ELLAS</span>
+                </a>
+            </div>
+        </div>
+        &nbsp;
+        <a class="header_link1" href="promociones.html">PROMOCIONES</a>
+        &nbsp;
+        <a class="header_link" href="tips.html">TIPS</a>
+        &nbsp;
+        <a class="header_link" href="resenas.html">RESEÑAS</a>
+    </nav>
       <div class="header_container_icons">
         <a class="header_link" href="index.html">
           <img class="header_icon" src="Assets/iconos/simbolo_euro.png" alt="Euro" />

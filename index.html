@@ -20,14 +20,26 @@
         <a href="index.html"> <img src="Assets/Imagenes/logo-marca.png" alt="Logo de BellaVita" /> </a>
       </div>
       <nav class="header_nav">
-        <a class="header_link" href="productos.html">Productos</a>
-        &nbsp
-        <a class="header_link1" href="promociones.html">Promociones</a>
-        &nbsp
-        <a class="header_link" href="tips.html">Tips</a>
-        &nbsp
-        <a class="header_link" href="resenas.html">Reseñas</a>
-      </nav>
+        <div class="dropdown">
+            <a class="header_link" href="#">PRODUCTOS</a>
+            <div class="dropdown-content">
+                <a href="productos_verdes.html" class="dropdown-item">
+                    <img src="Assets/Imagenes/imagen-dropdown-verde.png" alt="Productos Verdes">
+                    <span class="item-text">PRODUCTOS VERDES</span>
+                </a>
+                <a href="productos_lilas.html" class="dropdown-item">
+                    <img src="Assets/Imagenes/imagen-dropdown-lila.png" alt="Productos Lilas">
+                    <span class="item-text">POR ELLAS</span>
+                </a>
+            </div>
+        </div>
+        &nbsp;
+        <a class="header_link1" href="promociones.html">PROMOCIONES</a>
+        &nbsp;
+        <a class="header_link" href="tips.html">TIPS</a>
+        &nbsp;
+        <a class="header_link" href="resenas.html">RESEÑAS</a>
+    </nav>
       <div class="header_container_icons">
         <a class="header_link" href="index.html">
           <img class="header_icon" src="Assets/iconos/simbolo_euro.png" alt="Euro" />
@@ -88,7 +100,7 @@
             <div class="hero-content">
               <h1>Descubre nuestros productos</h1>
               <p>Cuidado natural para una belleza auténtica</p>
-              <a href="productos.html" class="hero-cta-button">COMPRA YA</a>
+              <a href="./productos_verdes.html" class="hero-cta-button">COMPRA YA</a>
             </div>
           </section>
 
@@ -141,7 +153,7 @@
                 <h2>POR ELLAS <img src="./Assets/iconos/pink-ribbon.png" alt="Lazo rosa" class="ribbon_image"></h2>
                 <p>BellaVita no es solo un producto, es un gesto de amor, de lucha y de esperanza.</p>
                 <p>Cada producto lila vendido apoya la investigación contra el cáncer de mama y da fuerza a miles de mujeres que pelean cada día.</p>
-                <a href="productos.html" class="compra_ya_button">COMPRA YA</a>
+                <a href="./productos_lilas.html" class="compra_ya_button">COMPRA YA</a>
               </div>
             </div>
           </div>
