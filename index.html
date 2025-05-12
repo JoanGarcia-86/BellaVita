@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="author" content="Mathieu Grisard Pelaez">
     <title>BellaVita</title>
     <link rel="icon" href="./Assets/iconos/logo-marca.ico">
     <link rel="stylesheet" href="./CSS/styles.css">
@@ -11,7 +12,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Belleza&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <a href="https://www.flaticon.com/free-icons/breast-cancer" title="breast cancer icons" crossorigin="Breast cancer icons created by Freepik - Flaticon"></a>
     <script defer src="./JavaScript/scripts.js"></script>
-    <script defer src="./JavaScript/slider.js"></script>
 </head>
 <body>
   <header>
@@ -61,17 +61,23 @@
   </header>
       <main>
           <!-- CUERPO DE LA PÁGINA -->
-          <!-- Hero Section -->
+           <!-- Hero Section -->
           <section class="hero-section">
             <div class="hero-background">
               <!-- La imagen de fondo se aplicará por CSS -->
             </div>
             <div class="hero-content">
-              <h1>Descubre nuestros productos</h1>
-              <a href="./productos_verdes.html" class="hero-cta-button">Cuida de ti hoy</a>
             </div>
           </section>
-
+          
+          <!-- Banner de productos capilares -->
+          <div class="banner-productos">
+              <div class="banner-content">
+                  <h2 class="banner-title">Descubre nuestros productos capilares orgánicos</h2>
+                  <a href="./productos_verdes.html" class="banner-button">CUIDA DE TI HOY</a>
+              </div>
+          </div>
+          
           <!-- Información sobre productos destacados -->
           <div class="info_producto active">
           </div>
@@ -116,8 +122,8 @@
                   <!-- Producto 1 -->
                   <div class="product-card">
                     <div class="product-image">
-                      <img src="./Assets/Imagenes/Botella 1.png" alt="Loción capilar">
-                      <div class="product-title-overlay">Loción capilar</div>
+                      <img src="./Assets/Imagenes/Crema 1.png" alt="Crema capilar">
+                      <div class="product-title-overlay">Crema capilar</div>
                     </div>
                     <div class="product-button-container">
                       <a href="productos.html" class="comprar-btn">Comprar</a>
@@ -156,17 +162,6 @@
                       <a href="productos.html" class="comprar-btn">Comprar</a>
                     </div>
                   </div>
-                  
-                  <!-- Producto 5 -->
-                  <div class="product-card">
-                    <div class="product-image">
-                      <img src="./Assets/Imagenes/Crema 1.png" alt="Crema capilar">
-                      <div class="product-title-overlay">Crema capilar</div>
-                    </div>
-                    <div class="product-button-container">
-                      <a href="productos.html" class="comprar-btn">Comprar</a>
-                    </div>
-                  </div>
                 </div>
                 
                 <div class="slider-controls">
@@ -176,23 +171,47 @@
               </div>
             </div>
           </section>
-          <h1 class="aplic">Antes y después</h1>
-          <div class="seccion_articulos">
-            <div class="articulo">
-              <img src="Assets/Imagenes/Pelo1.png" alt="Artículo 1">
-            </div>
-            <div class="articulo">
-              <img src="Assets/Imagenes/Pelo2.png" alt="Artículo 2">
-            </div>
-            <div class="articulo">
-              <img src="Assets/Imagenes/Pelo3.png" alt="Artículo 3">
-            </div>
-          </div>
+          <!-- Sección de Antes y Después con efecto de revelación -->
+              <section class="antes-despues-seccion">
+                <h2 class="antes-despues-titulo">El 90% de los clientes notan su pelo más sano después del uso de productos BellaVita</h2>
+                
+                <div class="antes-despues-contenedor">
+                  <!-- Primera comparación -->
+                  <div class="tarjeta-comparacion">
+                    <div class="contenedor-comparacion">
+                      <div class="imagen-antes">
+                        <img src="./Assets/Imagenes/antes_ES_Raquel.webp" alt="Pelo antes del tratamiento">
+                        <span class="etiqueta antes">ANTES</span>
+                      </div>
+                      <div class="imagen-despues">
+                        <div class="revelacion-despues">
+                          <img src="./Assets/Imagenes/despues_ES_Raquel.webp" alt="Pelo después del tratamiento">
+                        </div>
+                        <span class="etiqueta despues">DESPUÉS</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- Segunda comparación -->
+                  <div class="tarjeta-comparacion">
+                    <div class="contenedor-comparacion">
+                      <div class="imagen-antes">
+                        <img src="./Assets/Imagenes/01_Before_ES.webp" alt="Pelo antes del tratamiento">
+                        <span class="etiqueta antes">ANTES</span>
+                      </div>
+                      <div class="imagen-despues">
+                        <div class="revelacion-despues">
+                          <img src="./Assets/Imagenes/01_After_ES.webp" alt="Pelo después del tratamiento">
+                        </div>
+                        <span class="etiqueta despues">DESPUÉS</span>
+                      </div>
+                    </div>
+                  </div>
       </main>
-        <!-- Nuevo Footer -->
+      <!-- Nuevo Footer -->
       <footer class="new-footer">
         <div class="footer-container">
-          <!-- Sección de Newsletter -->
+          <!-- Columna 1: Newsletter -->
           <div class="footer-newsletter">
             <h2>NO TE PIERDAS NADA</h2>
             <div class="newsletter-form">
@@ -200,6 +219,8 @@
               <button class="newsletter-button">Suscríbete</button>
             </div>
             <p class="privacy-notice">Al unirse acepta las <a href="#">políticas de privacidad</a> y recibir comunicaciones de BellaVita.</p>
+            
+            <!-- Métodos de pago -->
             <div class="payment-methods">
               <img src="./Assets/iconos/visa.png" alt="Visa">
               <img src="./Assets/iconos/mastercard.png" alt="Mastercard">
@@ -210,25 +231,25 @@
               <img src="./Assets/iconos/paypal.png" alt="PayPal">
             </div>
           </div>
-
-          <!-- Sección de Contacto -->
+          
+          <!-- Columna 2: Contacto -->
           <div class="footer-contact">
             <h3>Contacto</h3>
             <p>+34 627 35 64 73</p>
             <p><a href="mailto:bellavitaes@gmail.com">bellavitaes@gmail.com</a></p>
             <p><a href="#">Atención al cliente</a></p>
           </div>
-
-          <!-- Sección de Redes Sociales -->
+          
+          <!-- Columna 3: Redes Sociales -->
           <div class="footer-social">
             <h3>Síguenos</h3>
-            <p>Instagram: <a href="#">bellavitaes</a></p>
-            <p>Facebook: <a href="#">bellavitaes</a></p>
-            <p>Tik tok: <a href="#">bellavitaes</a></p>
+            <p><i class="fab fa-instagram"></i> <a href="#">bellavitaes</a></p>
+            <p><i class="fab fa-facebook-f"></i> <a href="#">bellavitaes</a></p>
+            <p><i class="fab fa-tiktok"></i> <a href="#">bellavitaes</a></p>
           </div>
         </div>
-
-        <!-- Sección Legal -->
+        
+        <!-- Sección legal (en la parte inferior) -->
         <div class="footer-legal">
           <a href="#">Aviso legal</a>
           <span class="separator">·</span>

@@ -430,6 +430,27 @@ body{
   color: #333;
 }
 
+/* Ajuste para iconos de redes sociales */
+.footer-social i {
+  width: 20px;
+  margin-right: 5px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* Colores específicos para cada red social (opcional) */
+.footer-social .fa-instagram {
+  color: #E1306C;
+}
+
+.footer-social .fa-facebook-f {
+  color: #4267B2;
+}
+
+.footer-social .fa-tiktok {
+  color: #000000;
+}
+
 /* Sección Legal */
 .footer-legal {
   text-align: center;
@@ -560,47 +581,131 @@ body{
   background-color: #ffffff;
   color: #000000;
 }
-.seccion_articulos {
-  display: flex;
-  justify-content:space-between;
-  padding: 2rem;
-  background-color: #9ff592;
+/* Estilos CSS actualizados para el efecto circular basado en distancia */
+.antes-despues-seccion {
+  padding: 2rem 0 4rem;
+  background-color: #abf89f;
 }
 
-.aplic {
+.antes-despues-titulo {
+  text-align: center;
+  font-family: "Belleza", sans-serif;
+  font-size: 2.2rem;
+  color: #333;
+  margin-bottom: 2.5rem;
+  padding: 0 1rem;
+}
+
+.antes-despues-contenedor {
   display: flex;
   justify-content: center;
-  color:#000000;
-  font-family: "Belleza", sans-serif;
-  margin-top: 2%;
-  padding-top: 1%;
-  background-color:#9ff592 ;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
-.articulo {
-  text-align: center;
-  width: 30%;
-  transition: transform 0.3s ease;
+.tarjeta-comparacion {
+  width: 300px;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  position: relative;
   cursor: pointer;
-  perspective: 1000px;
+  transform: translateZ(0); /* Activa aceleración hardware */
 }
 
-.articulo img {
-  width: 250px;
-  height: 500px;
-  border-radius: 8px;
-  transition: transform 0.6s ease-in-out;
-  transform-style: preserve-3d;
+.contenedor-comparacion {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
 }
 
-.rotate {
-  transform: rotateY(180deg);
+.imagen-antes,
+.imagen-despues {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
-.articulo:hover {
-  transform: scale(1.01);
+.imagen-antes img,
+.imagen-despues img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
+.imagen-despues {
+  z-index: 1;
+}
+
+.revelacion-despues {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  clip-path: circle(0% at 50% 50%);
+  -webkit-clip-path: circle(0% at 50% 50%); /* Para Safari */
+  will-change: clip-path; /* Mejora rendimiento */
+}
+
+/* Ocultar etiquetas ya que las imágenes ya tienen texto */
+.etiqueta {
+  display: none;
+}
+
+/* Añadir un pequeño resplandor al pasar el cursor para indicar interactividad */
+.tarjeta-comparacion::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.tarjeta-comparacion:hover::before {
+  opacity: 1;
+}
+
+/* Añadir indicador visual para clic */
+.tarjeta-comparacion::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white' opacity='0.8'%3E%3Cpath d='M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  opacity: 0.5;
+  z-index: 3;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.tarjeta-comparacion:hover::after {
+  opacity: 0;
+}
 /* Estilos para la sección de Storytelling */
 .storytelling_section {
   background-color: #abf89f;
@@ -870,7 +975,7 @@ body{
   overflow: visible;
 }
 
-/* Configuración para el slider rotatorio */
+/* Estilos para el carrusel rotatorio */
 .product-slider {
   position: relative;
   width: 100%;
@@ -878,27 +983,23 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
+  perspective: 1000px;
+  transform-style: preserve-3d;
 }
 
-/* Estilo base para cada tarjeta de producto */
 .product-card {
   position: absolute;
   width: 300px;
+  height: 400px;
   background-color: transparent;
-  overflow: visible;
   transition: all 0.5s ease;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  opacity: 0;
-  z-index: 0;
+  backface-visibility: hidden;
+  transform-origin: center;
 }
 
-/* Estilos para la tarjeta activa (en el centro) */
 .product-card.active {
-  opacity: 1;
-  z-index: 2;
-  filter: blur(0);
+  z-index: 10;
+  transform: translateZ(350px);
 }
 
 /* Estilos para las imágenes del producto */
@@ -1062,12 +1163,11 @@ body{
   }
 }
 
-/* Estilos para el Hero Section */
+/* Estilos para el hero-section modificado */
 .hero-section {
   position: relative;
   width: 100%;
   height: 80vh; /* Altura del 80% de la ventana */
-  
 }
 
 .hero-background {
@@ -1080,7 +1180,7 @@ body{
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  filter: brightness(1.05); /* Ligeramente más oscuro para mejor contraste */
+  filter: brightness(1.05);
   z-index: 1;
 }
 
@@ -1091,55 +1191,56 @@ body{
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end; /* Alinea el contenido hacia abajo */
+  justify-content: center; /* Centrar el título verticalmente */
   align-items: center;
-  padding-bottom: 80px; /* Espacio en la parte inferior */
   text-align: center;
 }
 
-.hero-content::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
+/* Estilos para la sección de productos capilares */
+.productos-section {
+  background-color: #8fdd83; /* Color verde más oscuro como solicitado */
+  padding: 2rem 0;
+  text-align: center;
   width: 100%;
-  height: 90px; /* Altura del degradado */
-  z-index: -1;
 }
 
-.hero-content h1 {
-  font-size: 3.5rem;
+.productos-titulo {
+  font-size: 2.7rem;
   color: #000000;
-  margin-bottom: 1rem;
   font-family: "Belleza", sans-serif;
-  text-shadow: 0 4px 8px rgb(255, 255, 255); 
+  text-shadow: 0 4px 8px rgb(255, 255, 255);
+  margin: 0;
 }
 
+.productos-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
 
-
-.hero-cta-button {
+.cuida-button {
   display: inline-block;
-  padding: 16px 48px; /* Botón más grande */
   background-color: white;
   color: #333;
-  font-size: 1.2rem;
-  font-weight: bold;
-  text-decoration: none;
+  padding: 0.8rem 2.5rem;
   border-radius: 50px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  text-decoration: none;
+  font-weight: bold;
   transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
   font-family: "Belleza", sans-serif;
   text-transform: uppercase;
+  font-size: 1rem;
   letter-spacing: 1px;
 }
 
-.hero-cta-button:hover {
+.cuida-button:hover {
   transform: translateY(-3px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
   background-color: #f8f8f8;
 }
 
-/* Responsive */
+/* Media queries para responsividad */
 @media (max-width: 768px) {
   .hero-section {
     height: 70vh;
@@ -1149,13 +1250,13 @@ body{
     font-size: 2.5rem;
   }
   
-  .hero-content p {
-    font-size: 1.2rem;
+  .productos-titulo {
+    font-size: 2rem;
+    padding: 0 1rem;
   }
   
-  .hero-cta-button {
-    padding: 14px 36px;
-    font-size: 1.1rem;
+  .cuida-button {
+    padding: 0.7rem 2rem;
   }
 }
 
@@ -1164,13 +1265,88 @@ body{
     font-size: 2rem;
   }
   
-  .hero-content p {
-    font-size: 1rem;
+  .productos-titulo {
+    font-size: 1.5rem;
   }
   
-  .hero-cta-button {
-    padding: 12px 30px;
-    font-size: 1rem;
+  .cuida-button {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Estilos para el banner de productos */
+.banner-productos {
+  position: relative;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.banner-content {
+  position: relative;
+  background-image: linear-gradient(to bottom, #abf89f 50%, #8fdd83 50%);
+  width: 100%;
+  padding: 2.5rem 1rem 3rem;
+  text-align: center;
+}
+
+.banner-title {
+  font-size: 2.5rem;
+  font-family: "Belleza", sans-serif;
+  font-weight: normal;
+  color: #000000;
+  margin: 0 0 1.5rem 0;
+  padding: 0;
+  position: relative;
+  z-index: 2;
+  bottom: 2.85rem;
+}
+
+.banner-button {
+  display: inline-block;
+  position: absolute;
+  bottom: 3.55rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  color: #333;
+  padding: 0.8rem 3rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  font-family: "Belleza", sans-serif;
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.banner-button:hover {
+  transform: translateX(-50%) translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Media queries para responsividad */
+@media (max-width: 768px) {
+  .banner-title {
+    font-size: 2rem;
+  }
+  
+  .banner-button {
+    padding: 0.7rem 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner-title {
+    font-size: 1.5rem;
+  }
+  
+  .banner-button {
+    padding: 0.6rem 2rem;
+    font-size: 0.9rem;
   }
 }
 
