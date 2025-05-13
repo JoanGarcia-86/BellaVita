@@ -708,7 +708,7 @@ body{
 }
 /* Estilos para la sección de Storytelling */
 .storytelling_section {
-  background-color: #abf89f;
+  background-color: #8fdd83;
   padding: 4rem 2rem;
   overflow: hidden;
 }
@@ -967,6 +967,11 @@ body{
 }
 
 /* Contenedor del slider */
+.featured-products{
+  background-color: #8fdd83;
+}
+
+
 .slider-container {
   position: relative;
   width: 100%;
