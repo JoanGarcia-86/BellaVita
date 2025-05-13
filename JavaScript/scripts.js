@@ -219,7 +219,7 @@ function initRotatingProductSlider() {
   }
   
   // Inicializar posiciones
-  productSlider.style.perspective = '1800px';
+  productSlider.style.perspective = '2650px';
   productSlider.style.transformStyle = 'preserve-3d';
   productCards.forEach(card => {
     card.style.position = 'absolute';
