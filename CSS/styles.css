@@ -591,7 +591,7 @@ body{
   text-align: center;
   font-family: "Belleza", sans-serif;
   font-size: 2.2rem;
-  color: #333;
+  color: #000000;
   margin-bottom: 2.5rem;
   padding: 0 1rem;
 }
@@ -865,7 +865,7 @@ body{
 
 .por_ellas_content h2 {
   font-size: 2.5rem;
-  color: #333;
+  color: #000000;
   margin-bottom: 1.2rem;
   font-family: "Belleza", sans-serif;
   position: relative;
@@ -888,10 +888,10 @@ body{
   margin-bottom: 1rem;
 }
 
-.compra_ya_button {
+.apoyalas {
   display: inline-block;
   background-color: white;
-  color: #333;
+  color: #000000;
   padding: 12px 35px;
   border-radius: 50px;
   text-decoration: none;
@@ -953,7 +953,7 @@ body{
 /* Estilos para la sección de productos destacados */
 .featured-products {
   padding: 80px 0;
-  background-color: #abf89f;
+  background-color: #8fdd83;
   position: relative;
   min-height: 650px;
 }
@@ -962,16 +962,11 @@ body{
   font-size: 2.5rem;
   text-align: center;
   margin-bottom: 40px;
-  color: #333;
+  color: #000000;
   font-family: "Belleza", sans-serif;
 }
 
 /* Contenedor del slider */
-.featured-products{
-  background-color: #8fdd83;
-}
-
-
 .slider-container {
   position: relative;
   width: 100%;
@@ -1314,7 +1309,7 @@ body{
   left: 50%;
   transform: translateX(-50%);
   background-color: white;
-  color: #333;
+  color: #000000;
   padding: 0.8rem 3rem;
   border-radius: 50px;
   text-decoration: none;
@@ -1415,4 +1410,200 @@ body{
   font-weight: normal;
   font-size: 17px;
   text-transform: uppercase;
+}
+
+/* Estilos para la página de historia con diseño alternativo */
+.historia-banner {
+  background-color: #abf89f;
+  padding: 1rem ;
+  text-align: center;
+  margin-bottom: 0;
+  margin-top: 85px;
+}
+
+.historia-banner h1 {
+  font-size: 2.8rem;
+  color: #000000;
+  font-family: "Belleza", sans-serif;
+  margin: 0;
+  font-weight: normal;
+  position: relative;
+  display: inline-block;
+}
+
+.historia-banner h1:after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 3px;
+  background-color: #8fdd83;
+  margin: 0.5rem auto 0;
+}
+
+.historia-container {
+  max-width: 1000px;
+  margin: 0 auto 5rem auto;
+  padding: 3rem 2rem;
+  background-color: #ffffff;
+  border-radius: 1%;
+}
+
+/* Sección de introducción con imagen y texto lado a lado */
+.historia-intro {
+  display: flex;
+  gap: 3rem;
+  margin-bottom: 3rem;
+  align-items: center;
+}
+
+.historia-image {
+  flex: 1;
+  max-width: 350px;
+}
+
+.historia-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.historia-text {
+  flex: 1.5;
+}
+
+.historia-text .pregunta {
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+.historia-text p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+/* Secciones de contenido */
+.historia-seccion {
+  margin-bottom: 3rem;
+}
+
+.historia-seccion h2 {
+  font-size: 2rem;
+  color: #000000;
+  font-family: "Belleza", sans-serif;
+  margin-bottom: 1.5rem;
+  font-weight: normal;
+}
+
+.historia-seccion p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+/* Grid de valores */
+.valores-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.valor-card {
+  background-color: rgba(143, 221, 131, 0.1);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.valor-card h3 {
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 0.8rem;
+  font-family: "Belleza", sans-serif;
+}
+
+.valor-card p {
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+/* Sección de cierre */
+.historia-cierre {
+  text-align: center;
+  margin: 4rem 0 2rem;
+}
+
+.historia-cierre p {
+  font-size: 1.4rem;
+  color: #333;
+  margin-bottom: 2.5rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.historia-boton {
+  display: inline-block;
+  background-color: #8fdd83;
+  color: #333;
+  padding: 0.8rem 2.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: "Belleza", sans-serif;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.historia-boton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  background-color: #7dcc71;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .valores-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .historia-banner h1 {
+    font-size: 2.2rem;
+  }
+  
+  .historia-intro {
+    flex-direction: column;
+  }
+  
+  .historia-image {
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+  }
+  
+  .valores-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .historia-cierre p {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .historia-container {
+    padding: 2rem 1.5rem;
+  }
+  
+  .historia-banner h1 {
+    font-size: 1.8rem;
+  }
 }
