@@ -4,14 +4,16 @@
     <meta charset="UTF-8">
     <meta name="author" content="Mathieu Grisard Pelaez">
     <title>Galeria</title>
+    <link rel="icon" href="./Assets/iconos/logo-marca.ico">
     <link rel="stylesheet" href="./CSS/styles.css">
+    <script defer src="./JavaScript/scripts.js"></script>
+    <link rel="stylesheet" href="./CSS/productos.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Belleza&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script defer src="./JavaScript/scripts.js"></script>
 </head>
-<body>
+<body class="porEllas-body">
   <header>
     <div class="header_container">
       <div class="header_logo">
@@ -47,9 +49,6 @@
           <img class="header_icon" src="Assets/iconos/lupa.png" alt="Buscar" />
         </a>
         <a class="header_link" href="index.html">
-          <img class="header_icon" src="Assets/iconos/llamar.png" alt="Telefono" />
-        </a>
-        <a class="header_link" href="index.html">
           <img class="header_icon" src="Assets/iconos/red-heart_2764-fe0f.png" alt="Favoritos" />
         </a>
         <a class="header_link" href="index.html">
@@ -58,7 +57,45 @@
       </div>
     </div>
   </header>
+  <main>
+    <!-- Banner con imagen de fondo para POR ELLAS -->
+    <div class="porEllas-banner">
+      <h1>POR ELLAS</h1>
+      <button class="filtros-btn">
+        <i class="fas fa-filter"></i> Filtros
+      </button>
+    </div>
 
+    <!-- Grid de productos -->
+    <div class="productos-grid">
+      <!-- Producto 1 -->
+      <div class="producto-card">
+        <div class="producto-imagen">
+          <img src="./Assets/Imagenes/mascarilla-lila.jpg" alt="Mascarilla BellaVita">
+        </div>
+        <h3>Mascarilla POR ELLAS</h3>
+        <p class="precio">22,99€</p>
+      </div>
+
+      <!-- Producto 2 -->
+      <div class="producto-card">
+        <div class="producto-imagen">
+          <img src="./Assets/Imagenes/Botellin 1.png" alt="Sérum BellaVita">
+        </div>
+        <h3>Sérum POR ELLAS</h3>
+        <p class="precio">25,99€</p>
+      </div>
+      
+      <!-- Producto 3 -->
+      <div class="producto-card">
+        <div class="producto-imagen">
+          <img src="./Assets/Imagenes/champu-lila.png" alt="Champú BellaVita">
+        </div>
+        <h3>Champú POR ELLAS</h3>
+        <p class="precio">20,99€</p>
+      </div>
+    </div>
+  </main>
 
 <!-- Nuevo Footer -->
       <footer class="new-footer">
