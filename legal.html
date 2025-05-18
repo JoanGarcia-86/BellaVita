@@ -7,11 +7,13 @@
     <link rel="icon" href="./Assets/iconos/logo-marca.ico">
     <link rel="stylesheet" href="./CSS/styles.css">
     <link rel="stylesheet" href="./CSS/legal.css">
+    <link rel="stylesheet" href="./CSS/estilos-carrito.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Belleza&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <script defer src="./JavaScript/legal.js"></script>
+    
 </head>
 <body>
   <header>
@@ -51,8 +53,9 @@
         <a class="header_link" href="index.html">
           <img class="header_icon" src="Assets/iconos/red-heart_2764-fe0f.png" alt="Favoritos" />
         </a>
-        <a class="header_link" href="index.html">
-          <img class="header_icon" src="Assets/iconos/carrito-de-compras.png" alt="Cesta de compras" />
+        <a class="header_link cart-icon-link" href="#" id="cart-icon-trigger">
+          <img class="header_icon cart-icon" src="Assets/iconos/carrito-de-compras.png" alt="Cesta de compras" />
+          <span class="cart-count">0</span>
         </a>
       </div>
     </div>
@@ -313,3 +316,6 @@
           <a href="legal.html#condiciones-compra">Políticas de compra</a>
         </div>
       </footer>
+     </body>
+     <script src="./JavaScript/carrito-global.js"></script>
+</html>

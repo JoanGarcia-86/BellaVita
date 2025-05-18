@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Mathieu Grisard Pelaez">
-    <title>POR ELLAS | BellaVita</title>
+    <title>Pedido Confirmado | BellaVita</title>
     <link rel="icon" href="./Assets/iconos/logo-marca.ico">
     <link rel="stylesheet" href="./CSS/styles.css">
-    <link rel="stylesheet" href="./CSS/productos.css">
+    <link rel="stylesheet" href="./CSS/checkout.css">
     <link rel="stylesheet" href="./CSS/estilos-carrito.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Belleza&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script defer src="./JavaScript/productos.js"></script>
+    <script defer src="./JavaScript/checkout.js"></script>
     <script src="./JavaScript/carrito-init.js"></script>
 </head>
-<body class="porEllas-body">
+<body>
   <header>
     <div class="header_container">
       <div class="header_logo">
@@ -63,101 +63,35 @@
   </header>
 
   <main>
-    <!-- Banner POR ELLAS -->
-    <div class="porEllas-banner">
-      <h1>POR ELLAS</h1>
-      <button class="filtros-btn">
-        <i class="fas fa-filter"></i> Filtros
-      </button>
-    </div>
-
-    <!-- Grid de productos POR ELLAS -->
-    <div class="productos-grid">
-      <!-- Producto 1: Champú POR ELLAS -->
-      <div class="producto-card" data-id="6">
-        <div class="producto-imagen">
-          <img src="./Assets/Imagenes/champu-lila.png" alt="Champú POR ELLAS">
-        </div>
-        <div class="producto-info">
-          <h3>Champú POR ELLAS</h3>
-          <p class="precio">20,99€</p>
-          <div class="producto-botones">
-            <button class="btn-comprar" data-id="6">Ver detalles</button>
-            <button class="btn-carrito" data-id="6" data-nombre="Champú POR ELLAS" data-precio="20.99" data-imagen="./Assets/Imagenes/champu-lila.png">
-              <i class="fas fa-shopping-cart"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Producto 2: Mascarilla POR ELLAS -->
-      <div class="producto-card" data-id="7">
-        <div class="producto-imagen">
-          <img src="./Assets/Imagenes/mascarilla-lila.jpg" alt="Mascarilla POR ELLAS">
-        </div>
-        <div class="producto-info">
-          <h3>Mascarilla POR ELLAS</h3>
-          <p class="precio">22,90€</p>
-          <div class="producto-botones">
-            <button class="btn-comprar" data-id="7">Ver detalles</button>
-            <button class="btn-carrito" data-id="7" data-nombre="Mascarilla POR ELLAS" data-precio="22.99" data-imagen="./Assets/Imagenes/mascarilla-lila.jpg">
-              <i class="fas fa-shopping-cart"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Producto 3: Sérum POR ELLAS -->
-      <div class="producto-card" data-id="5">
-        <div class="producto-imagen">
-          <img src="./Assets/Imagenes/Botellin 1.png" alt="Sérum POR ELLAS">
-        </div>
-        <div class="producto-info">
-          <h3>Sérum POR ELLAS</h3>
-          <p class="precio">25,99€</p>
-          <div class="producto-botones">
-            <button class="btn-comprar" data-id="5">Ver detalles</button>
-            <button class="btn-carrito" data-id="5" data-nombre="Sérum POR ELLAS" data-precio="25.99" data-imagen="./Assets/Imagenes/Botellin 1.png">
-              <i class="fas fa-shopping-cart"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Carrito desplegable -->
-    <div id="cart-sidebar" class="cart-sidebar">
-      <div class="cart-header">
-        <h3>Tu carrito</h3>
-        <button id="close-cart" class="close-cart">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-      
-      <div id="cart-content" class="cart-content">
-        <!-- Si está vacío -->
-        <div id="empty-cart" class="empty-cart">
-          <p>Tu carrito está vacío</p>
+    <section class="confirmation-section">
+      <div class="confirmation-container">
+        <div class="confirmation-icon">
+          <i class="fas fa-check"></i>
         </div>
         
-        <!-- Si tiene productos (inicialmente oculto) -->
-        <div id="cart-products" class="cart-products" style="display: none;">
-          <!-- Los productos se añadirán dinámicamente aquí -->
+        <h1 class="confirmation-title">¡Pedido Confirmado!</h1>
+        
+        <p class="confirmation-message">
+          Gracias por tu compra en BellaVita. Hemos recibido tu pedido correctamente y lo estamos preparando para su envío. Recibirás un correo electrónico con la confirmación y detalles de seguimiento.
+        </p>
+        
+        <div class="order-details">
+          <p class="order-number"><strong>Número de pedido:</strong> #BV-<span id="order-number">20242505</span></p>
+          <p class="order-info"><strong>Fecha:</strong> <span id="order-date">19 de mayo de 2025</span></p>
+          <p class="order-info"><strong>Método de pago:</strong> <span id="payment-method">Tarjeta de crédito</span></p>
+          <p class="order-info"><strong>Envío estimado:</strong> <span id="estimated-delivery">23-25 de mayo de 2025</span></p>
+        </div>
+        
+        <p class="confirmation-message">
+          Si tienes alguna pregunta sobre tu pedido, puedes contactar con nuestro servicio de atención al cliente enviando un email a <a href="mailto:bellavitaes@gmail.com">bellavitaes@gmail.com</a> o llamando al +34 627 35 64 73.
+        </p>
+        
+        <div class="action-buttons">
+          <a href="todosLosProductos.html" class="action-button">Seguir comprando</a>
+          <a href="index.html" class="action-button secondary">Ir a inicio</a>
         </div>
       </div>
-      
-      <div class="cart-footer">
-        <div class="cart-total">
-          <span>Total:</span>
-          <span id="cart-total-price">0,00€</span>
-        </div>
-        <button id="checkout-btn" class="checkout-btn">Finalizar compra</button>
-        <button id="continue-shopping" class="continue-shopping">Continuar comprando</button>
-      </div>
-    </div>
-
-    <!-- Overlay para oscurecer el fondo cuando el carrito está abierto -->
-    <div id="cart-overlay" class="cart-overlay"></div>
+    </section>
 
     <script src="./JavaScript/carrito-global.js"></script>
   </main>
@@ -219,5 +153,5 @@
       <a href="legal.html#condiciones-compra">Políticas de compra</a>
     </div>
   </footer>
-</body>
+  </body>
 </html>

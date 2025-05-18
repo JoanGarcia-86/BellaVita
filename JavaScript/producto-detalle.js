@@ -457,3 +457,34 @@ document.addEventListener("DOMContentLoaded", function() {
   cargarCarrito();
   cargarDetallesProducto();
 });
+
+
+// Función para manejar el proceso de checkout
+function procesarCheckout() {
+  // Obtener el carrito actual
+  const carritoGuardado = localStorage.getItem('carritoProductos');
+  
+  if (!carritoGuardado || JSON.parse(carritoGuardado).productos.length === 0) {
+    // Si el carrito está vacío, mostrar mensaje
+    alert('Tu carrito está vacío. Añade productos antes de finalizar la compra.');
+    return;
+  }
+  
+  // Guardar el estado actual del carrito en sessionStorage para recuperarlo en la página de checkout
+  sessionStorage.setItem('checkoutCarrito', carritoGuardado);
+  
+  // Redirigir a la página de checkout
+  window.location.href = 'checkout.html';
+}
+
+// Asignar la función al botón de checkout
+const checkoutBtn = document.getElementById('checkout-btn');
+if (checkoutBtn) {
+  // Reemplazar el event listener existente con el nuevo
+  checkoutBtn.removeEventListener('click', function() {
+    alert('¡Finalizar compra! Aquí implementarías el proceso de checkout.');
+  });
+  
+  // Añadir el nuevo event listener
+  checkoutBtn.addEventListener('click', procesarCheckout);
+}
