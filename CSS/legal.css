@@ -1,0 +1,319 @@
+/* Estilos para la página de textos legales */
+
+/* Estilos para el banner */
+.legal-banner {
+  width: 100%;
+  height: 250px; /* Aumentar la altura para mostrar más de la imagen */
+  position: relative;
+  background-image: url('./imagenes_css/mujer-justicia.jpg'); /* Asegúrate de usar la ruta correcta a tu imagen */
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  margin: 80px auto 30px;
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.legal-banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(171, 248, 159, 0.4); /* Verde translúcido */
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.legal-banner h1 {
+  color: #000;
+  font-size: 2.8rem;
+  font-weight: 700;
+  position: relative;
+  z-index: 2;
+  font-family: "Belleza", sans-serif;
+  text-align: center;
+  /* Añadir sombra de texto para mejorar la legibilidad sobre la imagen */
+  text-shadow: 0 2px 4px rgba(255, 255, 255, 0.5);
+}
+
+/* Contenedor principal */
+.legal-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  display: flex;
+  gap: 30px;
+  padding: 0 20px;
+}
+
+/* Sidebar (menú lateral) */
+.legal-sidebar {
+  width: 250px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 120px;
+  height: fit-content;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  padding: 20px 0;
+}
+
+.legal-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.legal-sidebar li {
+  margin-bottom: 5px;
+}
+
+.legal-sidebar a {
+  display: block;
+  padding: 12px 20px;
+  text-decoration: none;
+  color: #333;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border-left: 3px solid transparent;
+}
+
+.legal-sidebar a:hover {
+  background-color: rgba(171, 248, 159, 0.1);
+  color: #000;
+}
+
+.legal-sidebar a.active {
+  background-color: rgba(171, 248, 159, 0.2);
+  border-left-color: #8fdd83;
+  color: #000;
+  font-weight: 600;
+}
+
+/* Contenido principal */
+.legal-content {
+  flex: 1;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  padding: 30px;
+  min-height: 800px;
+}
+
+/* Secciones legales */
+.legal-section {
+  display: none;
+}
+
+.legal-section.active {
+  display: block;
+}
+
+.legal-section h2 {
+  font-family: "Belleza", sans-serif;
+  font-size: 2.2rem;
+  color: #333;
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.legal-section h3 {
+  font-family: "Belleza", sans-serif;
+  font-size: 1.5rem;
+  color: #333;
+  margin: 30px 0 15px;
+}
+
+.legal-section h4 {
+  font-family: "DM Sans", sans-serif;
+  font-size: 1.2rem;
+  color: #333;
+  margin: 20px 0 10px;
+}
+
+.legal-text {
+  font-family: "DM Sans", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.legal-text p {
+  margin-bottom: 15px;
+}
+
+.legal-text ul, .legal-text ol {
+  margin: 15px 0;
+  padding-left: 25px;
+}
+
+.legal-text li {
+  margin-bottom: 8px;
+}
+
+/* Tablas */
+.table-container {
+  overflow-x: auto;
+  margin: 20px 0;
+}
+
+.legal-text table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+.legal-text th, .legal-text td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.legal-text th {
+  background-color: #f9f9f9;
+  font-weight: 600;
+  width: 40%;
+}
+
+/* Disclaimer académico */
+.legal-disclaimer {
+  background-color: #f1f9ed;
+  border-left: 4px solid #8fdd83;
+  padding: 20px;
+  margin: 30px 0;
+  border-radius: 8px;
+}
+
+.legal-disclaimer p {
+  margin-bottom: 10px;
+}
+
+.legal-disclaimer p:last-child {
+  margin-bottom: 0;
+}
+
+/* Instrucciones de cookies */
+.cookies-instructions {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.cookies-instructions h4 {
+  margin-top: 0;
+}
+
+.cookies-instructions ul {
+  margin-bottom: 0;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .legal-container {
+    flex-direction: column;
+  }
+  
+  .legal-sidebar {
+    width: 100%;
+    position: static;
+    margin-bottom: 20px;
+  }
+  
+  .legal-sidebar ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .legal-sidebar li {
+    margin-right: 5px;
+    margin-bottom: 5px;
+    flex-grow: 1;
+  }
+  
+  .legal-sidebar a {
+    text-align: center;
+    padding: 10px;
+    border-left: none;
+    border-bottom: 3px solid transparent;
+  }
+  
+  .legal-sidebar a.active {
+    border-left-color: transparent;
+    border-bottom-color: #8fdd83;
+  }
+}
+
+@media (max-width: 768px) {
+  .legal-banner {
+    height: 250px;
+    margin-top: 70px;
+  }
+  
+  .legal-banner h1 {
+    font-size: 2.2rem;
+  }
+  
+  .legal-content {
+    padding: 20px 15px;
+  }
+  
+  .legal-section h2 {
+    font-size: 1.8rem;
+  }
+  
+  .legal-section h3 {
+    font-size: 1.3rem;
+  }
+  
+  .legal-text {
+    font-size: 0.95rem;
+  }
+  
+  .legal-sidebar a {
+    font-size: 0.9rem;
+    padding: 8px 10px;
+  }
+}
+
+@media (max-width: 576px) {
+   .legal-banner {
+    height: 200px;
+  }
+  
+  .legal-banner h1 {
+    font-size: 1.8rem;
+  }
+  
+  .legal-section h2 {
+    font-size: 1.5rem;
+  }
+  
+  .legal-section h3 {
+    font-size: 1.2rem;
+  }
+  
+  .legal-sidebar ul {
+    flex-direction: column;
+  }
+  
+  .legal-sidebar li {
+    margin-right: 0;
+  }
+  
+  .legal-text th, .legal-text td {
+    padding: 8px 10px;
+  }
+  
+  .legal-disclaimer {
+    padding: 15px;
+  }
+}

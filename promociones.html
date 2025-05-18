@@ -2,8 +2,9 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Mathieu Grisard Pelaez">
-    <title>Galeria</title>
+    <title>Promociones | BellaVita</title>
     <link rel="icon" href="./Assets/iconos/logo-marca.ico">
     <link rel="stylesheet" href="./CSS/styles.css">
     <link rel="stylesheet" href="./CSS/productos.css">
@@ -11,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Belleza&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script defer src="./JavaScript/scripts.js"></script>
+    <script defer src="./JavaScript/productos.js"></script>
 </head>
 <body>
   <header>
@@ -40,7 +41,7 @@
         &nbsp;
         <a class="header_link" href="resenas.html">RESEÑAS</a>
         <a class="header_link" href="contacto.html">CONTACTO</a>
-    </nav>
+      </nav>
       <div class="header_container_icons">
         <a class="header_link" href="index.html">
           <img class="header_icon" src="Assets/iconos/simbolo_euro.png" alt="Euro" />
@@ -49,131 +50,161 @@
           <img class="header_icon" src="Assets/iconos/lupa.png" alt="Buscar" />
         </a>
         <a class="header_link" href="index.html">
-          <img class="header_icon" src="Assets/iconos/llamar.png" alt="Telefono" />
-        </a>
-        <a class="header_link" href="index.html">
           <img class="header_icon" src="Assets/iconos/red-heart_2764-fe0f.png" alt="Favoritos" />
         </a>
-        <a class="header_link" href="index.html">
-          <img class="header_icon" src="Assets/iconos/carrito-de-compras.png" alt="Cesta de compras" />
+        <a class="header_link cart-icon-link" href="#" id="cart-icon-trigger">
+          <img class="header_icon cart-icon" src="Assets/iconos/carrito-de-compras.png" alt="Cesta de compras" />
+          <span class="cart-count">0</span>
         </a>
       </div>
     </div>
   </header>
-    <main>
-      <section class="galeria-productos">
-        <h2 class="titulo-productos">Galería de Productos</h2>
-        <div class="grid-container">
-          <div class="grid-item">
-            <img src="Assets/Imagenes/Botella 1.png" alt="CAZADORA PLUMÍFERO 100% PLUMA">
-            <h3>Locion capilar</h3>
-            <s>25,95 EUR</s>
-            <p class="promocion">15,95 EUR</p>
-            <button>Comprar</button>
+
+  <main>
+    <!-- Banner de promociones -->
+    <div class="promo-banner">
+      <div class="promo-banner-overlay">
+        <h1>Ofertas por tiempo limitado</h1>
+        <p>Aprovecha nuestras promociones y consigue tus productos favoritos con descuentos exclusivos</p>
+      </div>
+    </div>
+    
+    <!-- Grid de productos en promoción -->
+    <div class="productos-grid">
+      <!-- Producto 1: Champú orgánico -->
+      <div class="producto-card promo-card" data-id="3">
+        <div class="producto-imagen">
+          <div class="discount-badge">-10%</div>
+          <img src="./Assets/Imagenes/Champú.png" alt="Champú orgánico BellaVita">
+        </div>
+        <div class="producto-info">
+          <h3>Champú orgánico BellaVita</h3>
+          <div class="price-container">
+            <span class="price-old">18,99€</span>
+            <span class="price-new">17,09€</span>
           </div>
-          <div class="grid-item">
-            <img src="Assets/Imagenes/Botellin 1.png" alt="PANTALÓN CARGO RELAXED FIT" />
-            <h3>Serum capilar versión 1</h3>
-            <s>23,95 EUR</s>
-            <p class="promocion">18,95 EUR</p>
-            <button>Comprar</button>
-          </div>
-          <div class="grid-item">
-            <img src="Assets/Imagenes/Botellin 2.png" alt="CAZADORA ACOLCHADA LARGA" />
-            <h3>Serum capilar versión 2</h3>
-            <s>23,95 EUR</s>
-            <p class="promocion">18,95 EUR</p>
-            <button>Comprar</button>
-          </div>
-          <div class="grid-item">
-            <img src="Assets/Imagenes/Crema 1.png" alt="JEANS SLIM FIT" />
-            <h3>Crema capilar</h3>
-            <s>17,95 EUR</s>
-            <p class="promocion">15,95 EUR</p>
-            <button>Comprar</button>
-          </div>
-          <div class="grid-item">
-            <img src="Assets/Imagenes/Botella 1.png" alt="CAZADORA PLUMÍFERO 100% PLUMA">
-            <h3>Locion capilar</h3>
-            <s>25,95 EUR</s>
-            <p class="promocion">15,95 EUR</p>
-            <button>Comprar</button>
-          </div>
-          <div class="grid-item">
-            <img src="Assets/Imagenes/Botellin 1.png" alt="PANTALÓN CARGO RELAXED FIT" />
-            <h3>Serum capilar versión 1</h3>
-            <s>23,95 EUR</s>
-            <p class="promocion">18,95 EUR</p>
-            <button>Comprar</button>
-          </div>
-          <div class="grid-item">
-            <img src="Assets/Imagenes/Botellin 2.png" alt="CAZADORA ACOLCHADA LARGA" />
-            <h3>Serum capilar versión 2</h3>
-            <s>23,95 EUR</s>
-            <p class="promocion">18,95 EUR</p>
-            <button>Comprar</button>
-          </div>
-          <div class="grid-item">
-            <img src="Assets/Imagenes/Crema 1.png" alt="JEANS SLIM FIT" />
-            <h3>Crema capilar</h3>
-            <s>17,95 EUR</s>
-            <p class="promocion">15,95 EUR</p>
-            <button>Comprar</button>
+          <div class="producto-botones">
+            <button class="btn-comprar" data-id="3">Ver detalles</button>
+            <button class="btn-carrito" data-id="3" data-nombre="Champú orgánico BellaVita" data-precio="17.09" data-imagen="./Assets/Imagenes/Champú.png">
+              <i class="fas fa-shopping-cart"></i>
+            </button>
           </div>
         </div>
-      </section>
-      </main>
-       <!-- Nuevo Footer -->
-      <footer class="new-footer">
-        <div class="footer-container">
-          <!-- Columna 1: Newsletter -->
-          <div class="footer-newsletter">
-            <h2>NO TE PIERDAS NADA</h2>
-            <div class="newsletter-form">
-              <input type="email" placeholder="Email" class="newsletter-input">
-              <button class="newsletter-button">Suscríbete</button>
-            </div>
-            <p class="privacy-notice">Al unirse acepta las <a href="#">políticas de privacidad</a> y recibir comunicaciones de BellaVita.</p>
-            
-            <!-- Métodos de pago -->
-            <div class="payment-methods">
-              <img src="./Assets/iconos/visa.png" alt="Visa">
-              <img src="./Assets/iconos/mastercard.png" alt="Mastercard">
-              <img src="./Assets/iconos/amex.png" alt="American Express">
-              <img src="./Assets/iconos/diners-club.png" alt="Diners Club">
-              <img src="./Assets/iconos/jbc.png" alt="JBC">
-              <img src="./Assets/iconos/discovernet.png" alt="Discover Network">
-              <img src="./Assets/iconos/paypal.png" alt="PayPal">
-            </div>
+      </div>
+
+      <!-- Producto 2: Acondicionador orgánico -->
+      <div class="producto-card promo-card" data-id="2">
+        <div class="producto-imagen">
+          <div class="discount-badge">-15%</div>
+          <img src="./Assets/Imagenes/acondicionador.png" alt="Acondicionador orgánico BellaVita">
+        </div>
+        <div class="producto-info">
+          <h3>Acondicionador orgánico BellaVita</h3>
+          <div class="price-container">
+            <span class="price-old">19,99€</span>
+            <span class="price-new">16,99€</span>
           </div>
-          
-          <!-- Columna 2: Contacto -->
-          <div class="footer-contact">
-            <h3>Contacto</h3>
-            <p>+34 627 35 64 73</p>
-            <p><a href="mailto:bellavitaes@gmail.com">bellavitaes@gmail.com</a></p>
-            <p><a href="#">Atención al cliente</a></p>
+          <div class="producto-botones">
+            <button class="btn-comprar" data-id="2">Ver detalles</button>
+            <button class="btn-carrito" data-id="2" data-nombre="Acondicionador orgánico BellaVita" data-precio="16.99" data-imagen="./Assets/Imagenes/acondicionador.png">
+              <i class="fas fa-shopping-cart"></i>
+            </button>
           </div>
-          
-          <!-- Columna 3: Redes Sociales -->
-          <div class="footer-social">
-            <h3>Síguenos</h3>
-            <p><i class="fab fa-instagram"></i> <a href="#">bellavitaes</a></p>
-            <p><i class="fab fa-facebook-f"></i> <a href="#">bellavitaes</a></p>
-            <p><i class="fab fa-tiktok"></i> <a href="#">bellavitaes</a></p>
-          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Carrito desplegable -->
+    <div id="cart-sidebar" class="cart-sidebar">
+      <div class="cart-header">
+        <h3>Tu carrito</h3>
+        <button id="close-cart" class="close-cart">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      
+      <div id="cart-content" class="cart-content">
+        <!-- Si está vacío -->
+        <div id="empty-cart" class="empty-cart">
+          <p>Tu carrito está vacío</p>
         </div>
         
-        <!-- Sección legal (en la parte inferior) -->
-        <div class="footer-legal">
-          <a href="#">Aviso legal</a>
-          <span class="separator">·</span>
-          <a href="#">Políticas de cookies</a>
-          <span class="separator">·</span>
-          <a href="#">Políticas de privacidad</a>
-          <span class="separator">·</span>
-          <a href="#">Políticas de compra</a>
+        <!-- Si tiene productos (inicialmente oculto) -->
+        <div id="cart-products" class="cart-products" style="display: none;">
+          <!-- Los productos se añadirán dinámicamente aquí -->
         </div>
-      </footer>
+      </div>
+      
+      <div class="cart-footer">
+        <div class="cart-total">
+          <span>Total:</span>
+          <span id="cart-total-price">0,00€</span>
+        </div>
+        <button id="checkout-btn" class="checkout-btn">Finalizar compra</button>
+        <button id="continue-shopping" class="continue-shopping">Continuar comprando</button>
+      </div>
+    </div>
+
+    <!-- Overlay para oscurecer el fondo cuando el carrito está abierto -->
+    <div id="cart-overlay" class="cart-overlay"></div>
+  </main>
+
+  <!-- Nuevo Footer-->
+  <footer class="new-footer">
+    <div class="footer-container">
+      <!-- Columna 1: Newsletter -->
+      <div class="footer-newsletter">
+        <h2>NO TE PIERDAS NADA</h2>
+        <div class="newsletter-form">
+          <input type="email" placeholder="Email" class="newsletter-input">
+          <div class="privacy-checkbox-container">
+            <label class="privacy-checkbox">
+              <input type="checkbox" id="privacy-check" required>
+              <span class="checkbox-text">He leído y acepto las <a href="legal.html#politica-privacidad">políticas de privacidad</a></span>
+            </label>
+          </div>
+          <button class="newsletter-button">Suscríbete</button>
+        </div>
+        
+        <!-- Métodos de pago -->
+        <div class="payment-methods">
+          <img src="./Assets/iconos/visa.png" alt="Visa">
+          <img src="./Assets/iconos/mastercard.png" alt="Mastercard">
+          <img src="./Assets/iconos/amex.png" alt="American Express">
+          <img src="./Assets/iconos/diners-club.png" alt="Diners Club">
+          <img src="./Assets/iconos/jbc.png" alt="JBC">
+          <img src="./Assets/iconos/discovernet.png" alt="Discover Network">
+          <img src="./Assets/iconos/paypal.png" alt="PayPal">
+        </div>
+      </div>
+      
+      <!-- Columna 2: Contacto -->
+      <div class="footer-contact">
+        <h3>Contacto</h3>
+        <p>+34 627 35 64 73</p>
+        <p><a href="mailto:bellavitaes@gmail.com">bellavitaes@gmail.com</a></p>
+        <p><a href="#">Atención al cliente</a></p>
+      </div>
+      
+      <!-- Columna 3: Redes Sociales -->
+      <div class="footer-social">
+        <h3>Síguenos</h3>
+        <p><i class="fab fa-instagram"></i> <a href="#">bellavitaes</a></p>
+        <p><i class="fab fa-facebook-f"></i> <a href="#">bellavitaes</a></p>
+        <p><i class="fab fa-tiktok"></i> <a href="#">bellavitaes</a></p>
+      </div>
+    </div>
+    
+    <!-- Sección legal (en la parte inferior) -->
+    <div class="footer-legal">
+      <a href="legal.html#aviso-legal">Aviso legal</a>
+      <span class="separator">·</span>
+      <a href="legal.html#politica-cookies">Políticas de cookies</a>
+      <span class="separator">·</span>
+      <a href="legal.html#politica-privacidad">Políticas de privacidad</a>
+      <span class="separator">·</span>
+      <a href="legal.html#condiciones-compra">Políticas de compra</a>
+    </div>
+  </footer>
 </body>
 </html>

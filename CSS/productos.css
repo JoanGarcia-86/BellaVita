@@ -62,9 +62,9 @@
 }
 
 /* Grid de productos */
-.productos-grid {
+body .productos-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr) !important;
   gap: 20px;
   max-width: 1200px;
   margin: 0 auto;
@@ -128,12 +128,6 @@
 @media (max-width: 1200px) {
   .productos-grid {
     grid-template-columns: repeat(3, 1fr);
-    padding: 20px;
-  }
-  
-  .productos-banner {
-    margin: 80px 20px 30px;
-    width: calc(100% - 40px);
   }
 }
 
@@ -141,29 +135,11 @@
   .productos-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  
-  .productos-banner h1 {
-    font-size: 2.2rem;
-  }
-  
-  .filtros-btn {
-    bottom: 15px;
-    top: auto;
-    transform: none;
-  }
 }
 
 @media (max-width: 480px) {
   .productos-grid {
     grid-template-columns: 1fr;
-  }
-  
-  .productos-banner h1 {
-    font-size: 1.8rem;
-  }
-  
-  .productos-banner {
-    height: 150px;
   }
 }
 
@@ -303,9 +279,6 @@
 }
 
 /* Cambiar el color del header solo en la página POR ELLAS */
-.porEllas-body .header_container {
-  /* No establecemos el background-color aquí para mantener la transparencia inicial */
-}
 
 .porEllas-body .header_container:hover {
   background-color: #d5bce4; /* Solo cambia al color lila al hacer hover */
@@ -351,4 +324,1137 @@
     right: 10px;
     top: auto;
   }
+}
+
+/* Estilos para la página de promociones */
+
+/* Banner de promociones */
+.promo-banner {
+ width: 90%;
+  max-width: 1200px;
+  height: 180px;
+  position: relative;
+  background-image: url('./imagenes_css/banner-margaritas.jpg'); /* Imagen del lazo rosa como fondo */
+  background-size: cover;
+  background-position: left center; /* Posicionamos la imagen a la izquierda */
+  margin: 80px auto 30px;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 80px;
+}
+
+.promo-banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(171, 248, 159, 0.5); /* Verde translúcido */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.promo-banner h1 {
+  font-family: "Belleza", sans-serif;
+  font-size: 2.5rem;
+  color: #000000;
+  margin-bottom: 15px;
+  text-shadow: 0 2px 4px rgba(255, 255, 255, 0.5);
+}
+
+.promo-banner p {
+  font-size: 1.2rem;
+  color: #000000;
+  max-width: 800px;
+}
+
+/* Contenedor principal de promociones */
+.promociones-container {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+.promociones-title {
+  font-family: "Belleza", sans-serif;
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #000000;
+  position: relative;
+}
+
+.promociones-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 3px;
+  background-color: #8fdd83;
+  margin: 15px auto 0;
+}
+
+/* Grid de productos en promoción */
+.promociones-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+/* Tarjeta de producto en promoción */
+.promocion-card {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.promocion-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Insignia de descuento */
+.promocion-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: #ff3b30;
+  color: white;
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 20px;
+  z-index: 1;
+  font-size: 1rem;
+}
+
+/* Imagen del producto */
+.promocion-image {
+  height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9f9f9;
+  padding: 20px;
+}
+
+.promocion-image img {
+  max-width: 80%;
+  max-height: 250px;
+  object-fit: contain;
+  transition: transform 0.5s ease;
+}
+
+.promocion-card:hover .promocion-image img {
+  transform: scale(1.05);
+}
+
+/* Información del producto */
+.promocion-info {
+  padding: 25px;
+}
+
+.promocion-info h3 {
+  font-family: "Belleza", sans-serif;
+  font-size: 1.4rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Estilos para el precio */
+.promocion-price {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.price-old {
+  font-size: 1.1rem;
+  color: #999;
+  text-decoration: line-through;
+}
+
+.price-new {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ff3b30;
+}
+
+/* Descripción del producto */
+.promocion-description {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* Botón de añadir al carrito */
+.add-to-cart-btn {
+  width: 100%;
+  padding: 12px 15px;
+  background-color: #abf89f;
+  color: #333;
+  border: none;
+  border-radius: 25px;
+  font-family: "Belleza", sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #8fdd83;
+  transform: translateY(-2px);
+}
+
+/* Estilos para el carrito desplegable */
+.cart-sidebar {
+  position: fixed;
+  top: 0;
+  right: -400px; /* Inicialmente fuera de la pantalla */
+  width: 380px;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1050;
+  transition: right 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-sidebar.open {
+  right: 0;
+}
+
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.cart-header h3 {
+  font-family: "Belleza", sans-serif;
+  font-size: 1.5rem;
+  margin: 0;
+  color: #333;
+}
+
+.close-cart {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.3s ease;
+}
+
+.close-cart:hover {
+  color: #000;
+}
+
+.cart-content {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.empty-cart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  color: #999;
+  font-size: 1.1rem;
+}
+
+.cart-product {
+  display: flex;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.cart-product-image {
+  width: 80px;
+  height: 80px;
+  margin-right: 15px;
+  background-color: #f9f9f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.cart-product-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.cart-product-details {
+  flex-grow: 1;
+}
+
+.cart-product-title {
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.cart-product-price {
+  color: #777;
+  font-weight: 500;
+}
+
+.cart-product-quantity {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.quantity-btn {
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f5f5;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.quantity-btn:hover {
+  background: #e0e0e0;
+}
+
+.quantity-number {
+  margin: 0 10px;
+  font-weight: 500;
+}
+
+.cart-product-remove {
+  background: none;
+  border: none;
+  color: #999;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-top: 5px;
+  padding: 0;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.cart-product-remove:hover {
+  color: #ff3b30;
+}
+
+.cart-footer {
+  padding: 20px;
+  border-top: 1px solid #eee;
+  background-color: #fff;
+}
+
+.continue-shopping {
+  width: 100%;
+  padding: 12px 15px;
+  background-color: #abf89f;
+  color: #333;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-family: "Belleza", sans-serif;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.continue-shopping:hover {
+  background-color: #8fdd83;
+}
+
+/* Overlay para oscurecer el fondo cuando el carrito está abierto */
+.cart-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1040;
+  display: none;
+}
+
+.cart-overlay.open {
+  display: block;
+}
+
+/* Estilos para los iconos del carrito en el header */
+.header_icon.cart-icon {
+  position: relative;
+}
+
+.cart-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 18px;
+  height: 18px;
+  background-color: #ff0000;
+  color: white;
+  font-size: 0.7rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+/* Responsive para la página de promociones */
+@media (max-width: 992px) {
+  .promociones-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .promo-banner {
+    height: 200px;
+  }
+  
+  .promo-banner h1 {
+    font-size: 2rem;
+  }
+  
+  .promo-banner p {
+    font-size: 1rem;
+  }
+  
+  .promociones-title {
+    font-size: 1.8rem;
+  }
+  
+  .promocion-image {
+    height: 240px;
+  }
+  
+  .promocion-info h3 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .promo-banner {
+    height: 180px;
+    margin-top: 70px;
+  }
+  
+  .promo-banner h1 {
+    font-size: 1.6rem;
+  }
+  
+  .cart-sidebar {
+    width: 100%;
+    right: -100%;
+  }
+  
+  .promocion-badge {
+    font-size: 0.9rem;
+    padding: 5px 10px;
+  }
+  
+  .promocion-image {
+    height: 200px;
+  }
+  
+  .promocion-info {
+    padding: 20px;
+  }
+  
+  .price-old {
+    font-size: 1rem;
+  }
+  
+  .price-new {
+    font-size: 1.3rem;
+  }
+}
+
+/* Estilos para la nueva versión de tarjetas de producto */
+
+/* Banner de productos todos los productos */
+.productos-banner {
+  width: 100%;
+  height: 180px;
+  position: relative;
+  background-image: url('./imagenes_css/banner-margaritas.jpg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  margin: 80px auto 30px;
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.productos-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(171, 248, 159, 0.4); /* Verde translúcido */
+  z-index: 1;
+}
+
+.productos-banner h1 {
+  color: #000;
+  font-size: 2.8rem;
+  font-weight: 700;
+  position: relative;
+  z-index: 2;
+  font-family: "Belleza", sans-serif;
+  text-align: center;
+}
+
+.filtros-btn {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  z-index: 2;
+  font-family: "DM Sans", sans-serif;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.filtros-btn:hover {
+  background-color: #f5f5f5;
+}
+
+/* Grid de productos */
+.productos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto 50px;
+  padding: 0 20px;
+}
+
+/* Nuevo estilo para las tarjetas de productos */
+.producto-card {
+  background-color: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.producto-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.producto-imagen {
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+  position: relative;
+  background-color: #f9f9f9;
+}
+
+.producto-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.producto-card:hover .producto-imagen img {
+  transform: scale(1.05);
+}
+
+.producto-info {
+  padding: 15px;
+}
+
+.producto-info h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 8px;
+  font-family: "Belleza", sans-serif;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.precio {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 12px;
+  font-family: "DM Sans", sans-serif;
+}
+
+.producto-botones {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-comprar {
+  flex: 1;
+  padding: 10px;
+  background-color: #abf89f;
+  color: #333;
+  border: none;
+  border-radius: 5px;
+  font-family: "Belleza", sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-comprar:hover {
+  background-color: #8fdd83;
+  transform: translateY(-2px);
+}
+
+.btn-carrito {
+  width: 40px;
+  padding: 10px;
+  background-color: #f1f1f1;
+  color: #333;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-carrito:hover {
+  background-color: #A6CDDE;
+  transform: translateY(-2px);
+}
+
+/* Versión de promoción */
+.producto-card.promocion {
+  position: relative;
+}
+
+.descuento-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: #ff3b30;
+  color: white;
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 20px;
+  z-index: 2;
+  font-size: 0.9rem;
+}
+
+.precio-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.precio-antiguo {
+  font-size: 0.9rem;
+  color: #999;
+  text-decoration: line-through;
+  font-weight: normal;
+}
+
+.precio-nuevo {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ff3b30;
+}
+
+/* Carrito desplegable */
+.cart-sidebar {
+  position: fixed;
+  top: 0;
+  right: -400px; /* Inicialmente fuera de la pantalla */
+  width: 380px;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1050;
+  transition: right 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-sidebar.open {
+  right: 0;
+}
+
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.cart-header h3 {
+  font-family: "Belleza", sans-serif;
+  font-size: 1.5rem;
+  margin: 0;
+  color: #333;
+}
+
+.close-cart {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.3s ease;
+}
+
+.close-cart:hover {
+  color: #000;
+}
+
+.cart-content {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.empty-cart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  color: #999;
+  font-size: 1.1rem;
+}
+
+.cart-products {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.cart-product {
+  display: flex;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.cart-product-image {
+  width: 80px;
+  height: 80px;
+  margin-right: 15px;
+  background-color: #f9f9f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.cart-product-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.cart-product-details {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-product-title {
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.cart-product-price {
+  color: #777;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.cart-product-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.quantity-control {
+  display: flex;
+  align-items: center;
+}
+
+.quantity-btn {
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f5f5;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.quantity-btn:hover {
+  background: #e0e0e0;
+}
+
+.quantity-number {
+  margin: 0 10px;
+  font-weight: 500;
+}
+
+.cart-product-remove {
+  background: none;
+  border: none;
+  color: #999;
+  cursor: pointer;
+  font-size: 0.85rem;
+  padding: 5px;
+  transition: color 0.3s ease;
+}
+
+.cart-product-remove:hover {
+  color: #ff3b30;
+}
+
+.cart-footer {
+  padding: 20px;
+  border-top: 1px solid #eee;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cart-total {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.checkout-btn {
+  width: 100%;
+  padding: 12px 15px;
+  background-color: #abf89f;
+  color: #333;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-family: "Belleza", sans-serif;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.checkout-btn:hover {
+  background-color: #8fdd83;
+  transform: translateY(-2px);
+}
+
+.continue-shopping {
+  width: 100%;
+  padding: 10px 15px;
+  background: none;
+  border: 1px solid #ddd;
+  color: #666;
+  border-radius: 25px;
+  cursor: pointer;
+  font-family: "Belleza", sans-serif;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.continue-shopping:hover {
+  background-color: #f9f9f9;
+  border-color: #ccc;
+}
+
+/* Overlay para oscurecer el fondo cuando el carrito está abierto */
+.cart-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1040;
+  display: none;
+}
+
+.cart-overlay.open {
+  display: block;
+}
+
+/* Estilos para los iconos del carrito en el header */
+.cart-icon-link {
+  position: relative;
+}
+
+.cart-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 18px;
+  height: 18px;
+  background-color: #ff0000;
+  color: white;
+  font-size: 0.7rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+/* Animación para añadir al carrito */
+@keyframes addToCartAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.add-to-cart-animation {
+  animation: addToCartAnimation 0.5s ease;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .productos-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .productos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .productos-banner h1 {
+    font-size: 2rem;
+  }
+  
+  .cart-sidebar {
+    width: 100%;
+    right: -100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .productos-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .producto-imagen {
+    height: 250px;
+  }
+  
+  .productos-banner {
+    height: 150px;
+    margin-top: 70px;
+  }
+  
+  .filtros-btn {
+    bottom: 10px;
+    right: 10px;
+    top: auto;
+  }
+}
+
+/* Estilos específicos para productos en promoción */
+.promo-card .producto-imagen {
+  position: relative;
+}
+
+.discount-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #ff3b30;
+  color: white;
+  font-weight: bold;
+  padding: 6px 12px;
+  border-radius: 20px;
+  z-index: 2;
+  font-size: 0.9rem;
+}
+
+.price-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.price-old {
+  font-size: 0.9rem;
+  color: #999;
+  text-decoration: line-through;
+  font-weight: normal;
+}
+
+.price-new {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ff3b30;
+}
+
+/* Adaptaciones estéticas para POR ELLAS */
+.porEllas-body {
+  background-color: #f8f3fc;
+}
+
+.porEllas-body .producto-card {
+  background-color: white;
+  box-shadow: 0 3px 10px rgba(213, 188, 228, 0.15);
+}
+
+.porEllas-body .producto-card:hover {
+  box-shadow: 0 8px 20px rgba(213, 188, 228, 0.25);
+}
+
+.porEllas-body .btn-comprar {
+  background-color: #d5bce4;
+}
+
+.porEllas-body .btn-comprar:hover {
+  background-color: #c3a5d6;
+}
+
+.porEllas-body .btn-carrito:hover {
+  background-color: #d5bce4;
+}
+
+.porEllas-body .checkout-btn {
+  background-color: #d5bce4;
+}
+
+.porEllas-body .checkout-btn:hover {
+  background-color: #c3a5d6;
+}
+
+/* Estilos específicos para banners */
+.porEllas-banner {
+  background-image: url('./imagenes_css/banner-lazo.jpg'); /* Actualizar ruta si es necesario */
+}
+
+.promo-banner {
+  width: 90%;
+  max-width: 1200px;
+  height: 180px;
+  position: relative;
+  background-image: url('./imagenes_css/banner-margaritas.jpg'); /* Actualizar ruta si es necesario */
+  background-size: cover;
+  background-position: center;
+  margin: 80px auto 30px;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.promo-banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(171, 248, 159, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  z-index: 1;
+}
+
+.promo-banner h1 {
+  font-family: "Belleza", sans-serif;
+  font-size: 2.5rem;
+  color: #000;
+  margin-bottom: 15px;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.promo-banner p {
+  font-size: 1.2rem;
+  color: #000;
+  max-width: 800px;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+/* Estilos generales para elementos POR ELLAS en todas las páginas */
+.porEllas-body .header_container,
+body.por-ellas-producto .header_container {
+  background-color: rgba(213, 188, 228, 0.8);
+}
+
+.porEllas-body .cart-sidebar .checkout-btn,
+body.por-ellas-producto .cart-sidebar .checkout-btn {
+  background-color: #d5bce4;
+}
+
+.porEllas-body .cart-sidebar .checkout-btn:hover,
+body.por-ellas-producto .cart-sidebar .checkout-btn:hover {
+  background-color: #c3a5d6;
 }

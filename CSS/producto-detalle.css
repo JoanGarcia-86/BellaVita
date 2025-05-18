@@ -1,0 +1,252 @@
+/* Estilos para la página de detalle de producto siguiendo exactamente el mockup PDF */
+
+/* Contenedor principal del detalle de producto */
+.producto-detalle-container {
+  max-width: 1200px;
+  margin: 20px auto 50px;
+  padding: 0 20px;
+  margin-top: 150px;
+}
+
+.producto-detalle-wrapper {
+  position: relative;
+  background-color: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.producto-detalle-content {
+  display: flex;
+  padding: 30px;
+}
+
+/* Parte izquierda con la imagen */
+.producto-detalle-left {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.producto-detalle-left img {
+  max-width: 100%;
+  max-height: 450px;
+  object-fit: contain;
+}
+
+/* Parte derecha con la información */
+.producto-detalle-right {
+  flex: 1;
+  padding: 20px;
+}
+
+.producto-detalle-right h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #000;
+  margin: 0 0 15px;
+  font-family: "Belleza", sans-serif;
+}
+
+.producto-volumen {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 20px;
+  display: block;
+  font-family: "DM Sans", sans-serif;
+}
+
+.producto-descripcion {
+  margin-bottom: 25px;
+}
+
+.producto-descripcion p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #333;
+  font-family: "DM Sans", sans-serif;
+}
+
+.producto-ingredientes, 
+.producto-uso {
+  margin-bottom: 25px;
+}
+
+.producto-ingredientes h3, 
+.producto-uso h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+  font-family: "Belleza", sans-serif;
+}
+
+.producto-ingredientes p, 
+.producto-uso p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #333;
+  font-family: "DM Sans", sans-serif;
+}
+
+.producto-precio-accion {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+}
+
+.producto-precio {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 15px;
+  font-family: "DM Sans", sans-serif;
+}
+
+.add-to-cart-btn {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-family: "Belleza", sans-serif;
+  text-align: center;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #333;
+}
+
+/* Botón para compartir */
+.compartir-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: #555;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .producto-detalle-content {
+    flex-direction: column;
+  }
+  
+  .producto-detalle-left {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .producto-detalle-content {
+    padding: 20px;
+  }
+  
+  .producto-detalle-left img {
+    max-height: 350px;
+  }
+  
+  .producto-detalle-right h1 {
+    font-size: 1.5rem;
+  }
+  
+  .producto-precio {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .producto-detalle-content {
+    padding: 15px;
+  }
+  
+  .producto-detalle-left {
+    padding: 10px;
+  }
+  
+  .producto-detalle-right {
+    padding: 15px 10px;
+  }
+  
+  .add-to-cart-btn {
+    padding: 10px 15px;
+  }
+  
+  .compartir-btn {
+    top: 15px;
+    right: 15px;
+  }
+}
+
+/* Estilos específicos para productos POR ELLAS en la página de detalle */
+body.por-ellas-producto {
+  background-color: #e8dfed;
+}
+
+body.por-ellas-producto .producto-detalle-wrapper {
+  box-shadow: 0 2px 10px rgba(213, 188, 228, 0.2);
+}
+
+body.por-ellas-producto .add-to-cart-btn {
+  background-color: #d5bce4;
+}
+
+body.por-ellas-producto .add-to-cart-btn:hover {
+  background-color: #c3a5d6;
+}
+
+body.por-ellas-producto .search-container {
+  color: #a57cc1;
+}
+
+body.por-ellas-producto .search-form input {
+  border-color: #d5bce4;
+}
+
+/* Estilo para productos en promoción en la página de detalle */
+body.promo-producto .producto-precio {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+body.promo-producto .precio-antiguo {
+  font-size: 1.1rem;
+  color: #999;
+  text-decoration: line-through;
+  font-weight: normal;
+}
+
+body.promo-producto .badge-descuento {
+  background-color: #ff3b30;
+  color: white;
+  font-size: 0.9rem;
+  padding: 4px 10px;
+  border-radius: 20px;
+  margin-left: 10px;
+}
+
+/* Estilo para el menú desplegable en páginas POR ELLAS */
+.porEllas-body .dropdown-content,
+body.por-ellas-producto .dropdown-content {
+  background-color: rgba(213, 188, 228, 0.95) !important; /* Color lila con transparencia */
+}
+
+.porEllas-body .dropdown-item,
+body.por-ellas-producto .dropdown-item {
+  border-bottom-color: rgba(255, 255, 255, 0.2);
+}
+
+.porEllas-body .dropdown-item:hover,
+body.por-ellas-producto .dropdown-item:hover {
+  background-color: rgba(195, 165, 214, 0.8);
+}

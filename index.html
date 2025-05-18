@@ -111,7 +111,7 @@
               </div>
             </div>
           </div>
-        <!-- Sección de Productos Destacados con Slider Rotatorio -->
+          <!-- Sección de Productos Destacados con Slider Rotatorio -->
           <section class="featured-products">
             <div class="container">
               <h2>Nuestros Productos Destacados</h2>
@@ -120,11 +120,11 @@
                   <!-- Producto 1 -->
                   <div class="product-card">
                     <div class="product-image">
-                      <img src="./Assets/Imagenes/Crema 1.png" alt="Crema capilar">
-                      <div class="product-title-overlay">Crema hidratante</div>
+                      <img src="./Assets/Imagenes/Crema 1.png" alt="Acondicionador BellaVita">
+                      <div class="product-title-overlay">Acondicionador BellaVita</div>
                     </div>
                     <div class="product-button-container">
-                      <a href="productos.html" class="comprar-btn">Comprar</a>
+                      <a href="producto-detalle.html?id=2" class="comprar-btn">Comprar</a>
                     </div>
                   </div>
                   
@@ -135,7 +135,7 @@
                       <div class="product-title-overlay">Champú BellaVita</div>
                     </div>
                     <div class="product-button-container">
-                      <a href="productos.html" class="comprar-btn">Comprar</a>
+                      <a href="producto-detalle.html?id=3" class="comprar-btn">Comprar</a>
                     </div>
                   </div>
                   
@@ -146,7 +146,7 @@
                       <div class="product-title-overlay">Serum POR ELLAS</div>
                     </div>
                     <div class="product-button-container">
-                      <a href="productos.html" class="comprar-btn">Comprar</a>
+                      <a href="producto-detalle.html?id=5" class="comprar-btn">Comprar</a>
                     </div>
                   </div>
 
@@ -154,10 +154,10 @@
                   <div class="product-card">
                     <div class="product-image">
                       <img src="./Assets/Imagenes/producto-mano.jpeg" alt="Crema de manos">
-                      <div class="product-title-overlay">Crema de manos</div>
+                      <div class="product-title-overlay">Crema Selladora</div>
                     </div>
                     <div class="product-button-container">
-                      <a href="productos.html" class="comprar-btn">Comprar</a>
+                      <a href="producto-detalle.html?id=8" class="comprar-btn">Comprar</a>
                     </div>
                   </div>
                 </div>
@@ -205,8 +205,38 @@
                       </div>
                     </div>
                   </div>
+
+            <!-- Carrito desplegable -->
+                  <div id="cart-sidebar" class="cart-sidebar">
+                    <div class="cart-header">
+                      <h3>Tu carrito</h3>
+                      <button id="close-cart" class="close-cart">
+                        <i class="fas fa-times"></i>
+                      </button>
+                    </div>
+                    
+                    <div id="cart-content" class="cart-content">
+                      <!-- Si está vacío -->
+                      <div id="empty-cart" class="empty-cart">
+                        <p>Tu carrito está vacío</p>
+                      </div>
+                      
+                      <!-- Si tiene productos (inicialmente oculto) -->
+                      <div id="cart-products" class="cart-products" style="display: none;">
+                        <!-- Los productos se añadirán dinámicamente aquí -->
+                      </div>
+                    </div>
+                    
+                    <div class="cart-footer">
+                      <button id="continue-shopping" class="continue-shopping">Continuar comprando</button>
+                    </div>
+                  </div>
+
+                  <!-- Overlay para oscurecer el fondo cuando el carrito está abierto -->
+                  <div id="cart-overlay" class="cart-overlay"></div>
       </main>
-      <!-- Nuevo Footer -->
+
+    <!-- Nuevo Footer-->
       <footer class="new-footer">
         <div class="footer-container">
           <!-- Columna 1: Newsletter -->
@@ -214,9 +244,14 @@
             <h2>NO TE PIERDAS NADA</h2>
             <div class="newsletter-form">
               <input type="email" placeholder="Email" class="newsletter-input">
+              <div class="privacy-checkbox-container">
+                <label class="privacy-checkbox">
+                  <input type="checkbox" id="privacy-check" required>
+                  <span class="checkbox-text">He leído y acepto las <a href="legal.html#politica-privacidad">políticas de privacidad</a></span>
+                </label>
+              </div>
               <button class="newsletter-button">Suscríbete</button>
             </div>
-            <p class="privacy-notice">Al unirse acepta las <a href="#">políticas de privacidad</a> y recibir comunicaciones de BellaVita.</p>
             
             <!-- Métodos de pago -->
             <div class="payment-methods">
@@ -249,14 +284,12 @@
         
         <!-- Sección legal (en la parte inferior) -->
         <div class="footer-legal">
-          <a href="#">Aviso legal</a>
+          <a href="legal.html#aviso-legal">Aviso legal</a>
           <span class="separator">·</span>
-          <a href="#">Políticas de cookies</a>
+          <a href="legal.html#politica-cookies">Políticas de cookies</a>
           <span class="separator">·</span>
-          <a href="#">Políticas de privacidad</a>
+          <a href="legal.html#politica-privacidad">Políticas de privacidad</a>
           <span class="separator">·</span>
-          <a href="#">Políticas de compra</a>
+          <a href="legal.html#condiciones-compra">Políticas de compra</a>
         </div>
       </footer>
-  </body>
-</html>

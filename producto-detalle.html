@@ -4,16 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Mathieu Grisard Pelaez">
-    <title>Todos los Productos | BellaVita</title>
+    <title>Detalle de Producto | BellaVita</title>
     <link rel="icon" href="./Assets/iconos/logo-marca.ico">
     <link rel="stylesheet" href="./CSS/styles.css">
     <link rel="stylesheet" href="./CSS/productos.css">
+    <link rel="stylesheet" href="./CSS/producto-detalle.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Belleza&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body>
+<body id="producto-detalle-body">
   <header>
     <div class="header_container">
       <div class="header_logo">
@@ -59,151 +60,42 @@
     </div>
   </header>
 
-  <main>
-    <!-- Banner de productos -->
-    <div class="productos-banner">
-      <h1>TODOS LOS PRODUCTOS</h1>
-      <button class="filtros-btn">
-        <i class="fas fa-filter"></i> Filtros
-      </button>
-    </div>
-
-    <!-- Grid de productos con nuevo diseño -->
-    <div class="productos-grid">
-      <!-- Producto 1 -->
-      <div class="producto-card" data-id="1">
-        <div class="producto-imagen">
-          <img src="./Assets/Imagenes/serum_verde.png" alt="Sérum Orgánico BellaVita">
-        </div>
-        <div class="producto-info">
-          <h3>Sérum Orgánico BellaVita</h3>
-          <p class="precio">22.99€</p>
-          <div class="producto-botones">
-            <button class="btn-comprar">Ver detalles</button>
-            <button class="btn-carrito" data-id="1" data-nombre="Sérum Orgánico" data-precio="22.99" data-imagen="./Assets/Imagenes/serum_verde.png">
-              <i class="fas fa-shopping-cart"></i>
-            </button>
+  <main>   
+    <div class="producto-detalle-container">
+      <div class="producto-detalle-wrapper">
+        <div class="producto-detalle-content">
+          <div class="producto-detalle-left">
+            <img id="producto-imagen" src="" alt="Producto">
+          </div>
+          
+          <div class="producto-detalle-right">
+            <h1 id="producto-nombre">Nombre del Producto</h1>
+            <p id="producto-volumen" class="producto-volumen">250ml</p>
+            
+            <div class="producto-descripcion">
+              <p id="producto-descripcion-texto">Descripción del producto...</p>
+            </div>
+            
+            <div class="producto-ingredientes">
+              <h3>Ingredientes:</h3>
+              <p id="producto-ingredientes-texto">Lista de ingredientes...</p>
+            </div>
+            
+            <div class="producto-uso">
+              <h3>Modo de uso:</h3>
+              <p id="producto-uso-texto">Instrucciones de uso...</p>
+            </div>
+            
+            <div class="producto-precio-accion">
+              <span id="producto-precio" class="producto-precio">0,00€</span>
+              <button id="add-to-cart-btn" class="add-to-cart-btn">AÑADIR A LA CESTA</button>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- Producto 2 -->
-      <div class="producto-card" data-id="2">
-        <div class="producto-imagen">
-          <img src="./Assets/Imagenes/Crema 1.png" alt="Acondicionador BellaVita">
-        </div>
-        <div class="producto-info">
-          <h3>Acondicionador BellaVita</h3>
-          <p class="precio">19.99€</p>
-          <div class="producto-botones">
-            <button class="btn-comprar">Ver detalles</button>
-            <button class="btn-carrito" data-id="2" data-nombre="Acondicionador BellaVita" data-precio="19.99" data-imagen="./Assets/Imagenes/Crema 1.png">
-              <i class="fas fa-shopping-cart"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Producto 3 -->
-      <div class="producto-card" data-id="3">
-        <div class="producto-imagen">
-          <img src="./Assets/Imagenes/Champú.png" alt="Champú orgánico BellaVita">
-        </div>
-        <div class="producto-info">
-          <h3>Champú orgánico BellaVita</h3>
-          <p class="precio">18,99€</p>
-          <div class="producto-botones">
-            <button class="btn-comprar">Ver detalles</button>
-            <button class="btn-carrito" data-id="3" data-nombre="Champú orgánico BellaVita" data-precio="19.99" data-imagen="./Assets/Imagenes/Champú.png">
-              <i class="fas fa-shopping-cart"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Producto 4 -->
-      <div class="producto-card" data-id="4">
-        <div class="producto-imagen">
-          <img src="./Assets/Imagenes/mascarilla-verde.jpg" alt="Mascarilla Bellavita">
-        </div>
-        <div class="producto-info">
-          <h3>Mascarilla Bellavita</h3>
-          <p class="precio">20,99€</p>
-          <div class="producto-botones">
-            <button class="btn-comprar">Ver detalles</button>
-            <button class="btn-carrito" data-id="4" data-nombre="Mascarilla Bellavita" data-precio="20.99" data-imagen="./Assets/Imagenes/mascarilla-verde.jpg">
-              <i class="fas fa-shopping-cart"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Producto 5 -->
-      <div class="producto-card" data-id="8">
-        <div class="producto-imagen">
-          <img src="./Assets/Imagenes/producto-mano.jpeg" alt="Crema selladora orgánica BellaVita">
-        </div>
-        <div class="producto-info">
-          <h3>Crema selladora orgánica BellaVita</h3>
-          <p class="precio">24,00€</p>
-          <div class="producto-botones">
-            <button class="btn-comprar">Ver detalles</button>
-            <button class="btn-carrito" data-id="8" data-nombre="Crema selladora orgánica BellaVita" data-precio="24" data-imagen="./Assets/Imagenes/crema.png">
-              <i class="fas fa-shopping-cart"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Producto 5 -->
-      <div class="producto-card" data-id="5">
-        <div class="producto-imagen">
-          <img src="./Assets/Imagenes/Botellin 1.png" alt="Aceite capilar POR ELLAS">
-        </div>
-        <div class="producto-info">
-          <h3>Sérum POR ELLAS</h3>
-          <p class="precio">25,99€</p>
-          <div class="producto-botones">
-            <button class="btn-comprar">Ver detalles</button>
-            <button class="btn-carrito" data-id="5" data-nombre="Sérum POR ELLAS" data-precio="25.99" data-imagen="./Assets/Imagenes/Botellin 1.png">
-              <i class="fas fa-shopping-cart"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Producto 6 -->
-      <div class="producto-card" data-id="6">
-        <div class="producto-imagen">
-          <img src="./Assets/Imagenes/champu-lila.png" alt="Champú POR ELLAS">
-        </div>
-        <div class="producto-info">
-          <h3>Champú POR ELLAS</h3>
-          <p class="precio">22,90€</p>
-          <div class="producto-botones">
-            <button class="btn-comprar">Ver detalles</button>
-            <button class="btn-carrito" data-id="6" data-nombre="Champú POR ELLAS" data-precio="22,90" data-imagen="./Assets/Imagenes/champu-lila.png">
-              <i class="fas fa-shopping-cart"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Producto 7 -->
-      <div class="producto-card" data-id="7">
-        <div class="producto-imagen">
-          <img src="./Assets/Imagenes/mascarilla-lila.jpg" alt="Mascarilla POR ELLAS">
-        </div>
-        <div class="producto-info">
-          <h3>Mascarilla POR ELLAS</h3>
-          <p class="precio">22,99€</p>
-          <div class="producto-botones">
-            <button class="btn-comprar">Ver detalles</button>
-            <button class="btn-carrito" data-id="7" data-nombre="Mascarilla POR ELLAS" data-precio="22.99" data-imagen="./Assets/Imagenes/mascarilla-lila.jpg">
-              <i class="fas fa-shopping-cart"></i>
-            </button>
-          </div>
-        </div>
+        <button class="compartir-btn">
+          <i class="fas fa-share-alt"></i>
+        </button>
       </div>
     </div>
 
@@ -300,7 +192,7 @@
     </div>
   </footer>
 
-  <!-- Script para las funcionalidades de productos y carrito -->
-  <script src="./JavaScript/productos.js"></script>
+  <!-- Scripts -->
+  <script src="./JavaScript/producto-detalle.js"></script>
 </body>
 </html>
