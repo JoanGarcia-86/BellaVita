@@ -3,10 +3,12 @@
 <head>
      <meta charset="UTF-8">
     <meta name="author" content="Mathieu Grisard Pelaez">
-    <title>Textos Legales | BellaVita</title>
+    <title>Home | BellaVita</title>
     <link rel="icon" href="./Assets/iconos/logo-marca.ico">
     <link rel="stylesheet" href="./CSS/styles.css">
     <link rel="stylesheet" href="./CSS/estilos-carrito.css">
+    <link rel="stylesheet" href="./CSS/popup.css">
+    <link rel="stylesheet" href="./CSS/responsivo.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -14,6 +16,9 @@
     <script defer src="./JavaScript/scripts.js"></script>
     <script defer src="./JavaScript/carrito-init.js"></script>
     <script defer src="./JavaScript/carrito-global.js"></script>
+    <script defer src="./JavaScript/popup.js"></script>
+    <script src="./JavaScript/responsivo.js"></script>
+
 </head>
 <body>
   <header>
@@ -21,6 +26,10 @@
       <div class="header_logo">
         <a href="index.html"> <img src="Assets/Imagenes/logo-marca.png" alt="Logo de BellaVita" /> </a>
       </div>
+      <!-- Botón de hamburguesa - añadir después del logo -->
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+          <span class="hamburger-icon">≡</span>
+      </button>
       <nav class="header_nav">
         <div class="dropdown">
             <a class="header_link" href="#">PRODUCTOS</a>
@@ -59,6 +68,42 @@
         </a>
       </div>
     </div>
+    <!-- Menú móvil -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-header">
+            <div class="mobile-logo">
+                <img src="Assets/Imagenes/logo-marca.png" alt="Logo de BellaVita" />
+            </div>
+            <button class="close-mobile-menu" id="close-mobile-menu" aria-label="Cerrar menú">
+                &times;
+            </button>
+        </div>
+        <nav class="mobile-nav">
+            <ul>
+                <li class="has-submenu">
+                    <a href="#" class="mobile-link">PRODUCTOS</a>
+                    <button class="submenu-toggle" aria-label="Abrir submenú">+</button>
+                    <ul class="mobile-submenu">
+                        <li><a href="./todosLosProductos.html" class="mobile-sublink">
+                            <img src="./Assets/Imagenes/imagen-dropdown-verde.png" alt="Productos Verdes" class="submenu-icon">
+                            <span>Todos los productos</span>
+                        </a></li>
+                        <li><a href="productos_lilas.html" class="mobile-sublink">
+                            <img src="./Assets/Imagenes/imagen-dropdown-lila.png" alt="Productos Lilas" class="submenu-icon">
+                            <span>POR ELLAS</span>
+                        </a></li>
+                    </ul>
+                </li>
+                <li><a href="promociones.html" class="mobile-link highlight">PROMOCIONES</a></li>
+                <li><a href="blog.html" class="mobile-link">BLOG</a></li>
+                <li><a href="resenas.html" class="mobile-link">RESEÑAS</a></li>
+                <li><a href="contacto.html" class="mobile-link">CONTACTO</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Overlay para cuando el menú está abierto -->
+    <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
   </header>
       <main>
           <!-- CUERPO DE LA PÁGINA -->
@@ -306,5 +351,44 @@
           <a href="legal.html#condiciones-compra">Políticas de compra</a>
         </div>
       </footer>
-    </body>
+      <!-- Código HTML para el popup -->
+        <div id="ventaja-popup">
+      <div class="popup-content">
+          <button id="close-popup" class="popup-close">&times;</button>
+          
+          <div class="popup-header">
+              <h2>Ventaja Exclusiva</h2>
+          </div>
+          
+          <div class="popup-image-container">
+              <img src="./Assets/Imagenes/mujer-sonriendo.png" alt="Mujer sonriendo">
+              <svg class="popup-wave" viewBox="0 0 1440 320" preserveAspectRatio="none">
+                  <path fill="#d5bce4" fill-opacity="1" d="M0,128L48,144C96,160,192,192,288,176C384,160,480,96,576,85.3C672,75,768,117,864,133.3C960,149,1056,139,1152,122.7C1248,107,1344,85,1392,74.7L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+              </svg>
+          </div>
+          
+          <div class="popup-message">
+              Suscríbete y consigue un 10%
+          </div>
+          
+          <form id="popup-form" class="popup-form">
+              <input type="email" id="popup-email" placeholder="Email" required>
+              
+              <div class="popup-checkboxes">
+                  <label class="popup-checkbox">
+                      <input type="checkbox" id="privacy-policy-check" required>
+                      <span class="checkbox-text">He leído y acepto las <a href="legal.html#politica-privacidad">políticas de privacidad</a></span>
+                  </label>
+                  
+                  <label class="popup-checkbox">
+                      <input type="checkbox" id="marketing-check">
+                      <span class="checkbox-text">Acepto recibir contenido de BellaVita vía email</span>
+                  </label>
+              </div>
+              
+              <button type="submit">Suscríbete</button>
+          </form>
+      </div>
+  </div>
+  </body>
 </html>
