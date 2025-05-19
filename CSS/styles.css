@@ -375,13 +375,15 @@ body{
   width: 100%;
 }
 
-.privacy-checkbox {
+.comercial-checkbox,
+.privacy-checkbox{ 
   display: flex;
   align-items: flex-start;
-  gap: 8px;
+  gap: 15px;
   cursor: pointer;
 }
 
+.comercial-checkbox input[type="checkbox"],
 .privacy-checkbox input[type="checkbox"] {
   margin-top: 3px;
   width: 16px;
@@ -389,6 +391,7 @@ body{
   cursor: pointer;
 }
 
+.comercial-checkbox .checkbox-text,
 .privacy-checkbox .checkbox-text {
   font-size: 0.9rem;
   color: #000000;
