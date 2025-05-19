@@ -1,4 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
+  // ******** ELEMENTOS DEL CARRITO ********
+  // Este archivo está destinado a manejar el carrito en la página de detalle de producto
+  
   // ******** SELECCIÓN DEL ENCABEZADO ********
   const header = document.querySelector(".header_container");
 
@@ -51,228 +54,6 @@ document.addEventListener("DOMContentLoaded", function() {
     document.addEventListener('click', closeDropdown);
   }
 
-  // ******** CARRITO ********
-  // Elementos del carrito
-  const cartIconTrigger = document.getElementById('cart-icon-trigger');
-  const cartSidebar = document.getElementById('cart-sidebar');
-  const cartOverlay = document.getElementById('cart-overlay');
-  const closeCartBtn = document.getElementById('close-cart');
-  const continueShoppingBtn = document.getElementById('continue-shopping');
-  const cartProducts = document.getElementById('cart-products');
-  const emptyCart = document.getElementById('empty-cart');
-  const cartTotalPrice = document.getElementById('cart-total-price');
-  const cartCount = document.querySelector('.cart-count');
-  const checkoutBtn = document.getElementById('checkout-btn');
-  const addToCartBtn = document.getElementById('add-to-cart-btn');
-  
-  // Estructura de datos del carrito
-  let carrito = {
-    productos: [],
-    total: 0
-  };
-  
-  // Función para abrir el carrito
-  function openCart() {
-    cartSidebar.classList.add('open');
-    cartOverlay.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-  
-  // Función para cerrar el carrito
-  function closeCart() {
-    cartSidebar.classList.remove('open');
-    cartOverlay.classList.remove('open');
-    document.body.style.overflow = '';
-  }
-  
-  // Cargar carrito desde localStorage
-  function cargarCarrito() {
-    const carritoGuardado = localStorage.getItem('carritoProductos');
-    if (carritoGuardado) {
-      carrito = JSON.parse(carritoGuardado);
-      actualizarIconoCarrito();
-      renderizarCarrito();
-    }
-  }
-  
-  // Guardar carrito en localStorage
-  function guardarCarrito() {
-    localStorage.setItem('carritoProductos', JSON.stringify(carrito));
-  }
-  
-  // Actualizar contador del icono de carrito
-  function actualizarIconoCarrito() {
-    const cantidadTotal = carrito.productos.reduce((total, producto) => total + producto.cantidad, 0);
-    cartCount.textContent = cantidadTotal;
-  }
-  
-  // Calcular total del carrito
-  function calcularTotal() {
-    carrito.total = carrito.productos.reduce((total, producto) => total + (producto.precio * producto.cantidad), 0);
-    cartTotalPrice.textContent = carrito.total.toFixed(2) + '€';
-  }
-  
-  // Renderizar productos en el carrito
-  function renderizarCarrito() {
-    if (carrito.productos.length === 0) {
-      emptyCart.style.display = 'flex';
-      cartProducts.style.display = 'none';
-      return;
-    }
-    
-    emptyCart.style.display = 'none';
-    cartProducts.style.display = 'block';
-    cartProducts.innerHTML = '';
-    
-    carrito.productos.forEach(producto => {
-      const productoElement = document.createElement('div');
-      productoElement.className = 'cart-product';
-      productoElement.dataset.id = producto.id;
-      
-      productoElement.innerHTML = `
-        <div class="cart-product-image">
-          <img src="${producto.imagen}" alt="${producto.nombre}">
-        </div>
-        <div class="cart-product-details">
-          <div class="cart-product-title">${producto.nombre}</div>
-          <div class="cart-product-price">${producto.precio}€</div>
-          <div class="cart-product-controls">
-            <div class="quantity-control">
-              <button class="quantity-btn decrease-btn" data-id="${producto.id}">-</button>
-              <span class="quantity-number">${producto.cantidad}</span>
-              <button class="quantity-btn increase-btn" data-id="${producto.id}">+</button>
-            </div>
-            <button class="cart-product-remove" data-id="${producto.id}">
-              <i class="fas fa-trash"></i>
-            </button>
-          </div>
-        </div>
-      `;
-      
-      cartProducts.appendChild(productoElement);
-    });
-    
-    // Añadir event listeners a los botones
-    document.querySelectorAll('.decrease-btn').forEach(btn => {
-      btn.addEventListener('click', decrementarCantidad);
-    });
-    
-    document.querySelectorAll('.increase-btn').forEach(btn => {
-      btn.addEventListener('click', incrementarCantidad);
-    });
-    
-    document.querySelectorAll('.cart-product-remove').forEach(btn => {
-      btn.addEventListener('click', eliminarProducto);
-    });
-    
-    calcularTotal();
-  }
-  
-  // Añadir producto al carrito
-  function añadirAlCarrito() {
-    const id = productoActual.id;
-    const nombre = productoActual.nombre;
-    const precio = productoActual.precio;
-    const imagen = productoActual.imagen;
-    
-    // Verificar si el producto ya está en el carrito
-    const productoExistente = carrito.productos.find(p => p.id === id);
-    
-    if (productoExistente) {
-      // Si ya existe, incrementar cantidad
-      productoExistente.cantidad += 1;
-    } else {
-      // Si no existe, añadir nuevo producto
-      carrito.productos.push({
-        id: id,
-        nombre: nombre,
-        precio: precio,
-        imagen: imagen,
-        cantidad: 1
-      });
-    }
-    
-    // Actualizar carrito
-    actualizarIconoCarrito();
-    guardarCarrito();
-    
-    // Mostrar carrito
-    openCart();
-    renderizarCarrito();
-  }
-  
-  // Decrementar cantidad de un producto
-  function decrementarCantidad(event) {
-    const id = event.currentTarget.dataset.id;
-    const producto = carrito.productos.find(p => p.id === id);
-    
-    if (producto && producto.cantidad > 1) {
-      producto.cantidad -= 1;
-    } else {
-      // Si la cantidad es 1, eliminar el producto
-      carrito.productos = carrito.productos.filter(p => p.id !== id);
-    }
-    
-    actualizarIconoCarrito();
-    guardarCarrito();
-    renderizarCarrito();
-  }
-  
-  // Incrementar cantidad de un producto
-  function incrementarCantidad(event) {
-    const id = event.currentTarget.dataset.id;
-    const producto = carrito.productos.find(p => p.id === id);
-    
-    if (producto) {
-      producto.cantidad += 1;
-    }
-    
-    actualizarIconoCarrito();
-    guardarCarrito();
-    renderizarCarrito();
-  }
-  
-  // Eliminar producto del carrito
-  function eliminarProducto(event) {
-    const id = event.currentTarget.dataset.id;
-    carrito.productos = carrito.productos.filter(p => p.id !== id);
-    
-    actualizarIconoCarrito();
-    guardarCarrito();
-    renderizarCarrito();
-  }
-
-  // Event listeners para el carrito
-  if (cartIconTrigger) {
-    cartIconTrigger.addEventListener('click', function(e) {
-      e.preventDefault();
-      openCart();
-    });
-  }
-  
-  if (closeCartBtn) {
-    closeCartBtn.addEventListener('click', closeCart);
-  }
-  
-  if (continueShoppingBtn) {
-    continueShoppingBtn.addEventListener('click', closeCart);
-  }
-  
-  if (cartOverlay) {
-    cartOverlay.addEventListener('click', closeCart);
-  }
-
-  if (checkoutBtn) {
-    checkoutBtn.addEventListener('click', function() {
-      alert('¡Finalizar compra! Aquí implementarías el proceso de checkout.');
-    });
-  }
-  
-  // Botón añadir al carrito en la página de detalle
-  if (addToCartBtn) {
-    addToCartBtn.addEventListener('click', añadirAlCarrito);
-  }
-
   // ******** FUNCIONALIDAD DE DETALLE DE PRODUCTO ********
   // Obtener parámetros de la URL
   const urlParams = new URLSearchParams(window.location.search);
@@ -287,8 +68,8 @@ document.addEventListener("DOMContentLoaded", function() {
   const productoIngredientes = document.getElementById('producto-ingredientes-texto');
   const productoUso = document.getElementById('producto-uso-texto');
 
-  // Variable para almacenar el producto actual
-  let productoActual = null;
+  // Variable para almacenar el producto actual (global para que esté disponible para carrito-global.js)
+  window.productoActual = null;
   
   // Base de datos de productos (utilizando los textos exactos de los PDFs)
   const productos = [
@@ -344,25 +125,25 @@ document.addEventListener("DOMContentLoaded", function() {
     },
     {
       id: "3",
-    nombre: "Champú orgánico BellaVita",
-    precio: 17.09,
-    precioOriginal: 18.99,
-    enPromocion: true,
-    descuento: "-10%",
-    volumen: "250ml",
-    imagen: "./Assets/Imagenes/Champú.png",
+      nombre: "Champú orgánico BellaVita",
+      precio: 17.09,
+      precioOriginal: 18.99,
+      enPromocion: true,
+      descuento: "-10%",
+      volumen: "250ml",
+      imagen: "./Assets/Imagenes/Champú.png",
       descripcion: "Formulado con ingredientes de origen vegetal, este champú limpia suavemente el cuero cabelludo sin sulfatos ni parabenos. Su combinación de extractos botánicos fortalece el cabello desde la raíz, aporta brillo natural y mantiene el equilibrio del pH. Ideal para uso diario y apto para todo tipo de cabello, incluso los más sensibles",
       ingredientes: "Aloe vera orgánico, aceite de coco virgen, extracto de romero, manzanilla, proteína de trigo y aceite esencial de lavanda.",
       uso: "Aplicar sobre el cabello mojado, masajear suavemente el cuero cabelludo con la yema de los dedos hasta formar una espuma ligera. Aclarar con abundante agua. Repetir si es necesario. Para mejores resultados, combinar con un acondicionador orgánico de la misma línea."
     },
     {
       id: "2",
-    nombre: "Acondicionador orgánico BellaVita",
-    precio: 16.99,
-    precioOriginal: 19.99,
-    enPromocion: true,
-    descuento: "-15%",
-    volumen: "250ml",
+      nombre: "Acondicionador orgánico BellaVita",
+      precio: 16.99,
+      precioOriginal: 19.99,
+      enPromocion: true,
+      descuento: "-15%",
+      volumen: "250ml",
       imagen: "./Assets/Imagenes/Crema 1.png",
       descripcion: "Hidrata, suaviza y repara tu cabello con ingredientes 100% naturales. Su fórmula orgánica, libre de sulfatos y siliconas, desenreda fácilmente y deja el cabello sedoso, brillante y protegido. Ideal para todo tipo de cabello, incluso el más sensible.",
       ingredientes: "Aceite de coco orgánico, manteca de karité, aloe vera, extracto de avena, aceites esenciales (lavanda y romero), conservantes naturales como sorbato de potasio y benzoato de sodio.",
@@ -387,46 +168,50 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Cargar los detalles del producto en la página
   function cargarDetallesProducto() {
-    productoActual = encontrarProducto();
+    window.productoActual = encontrarProducto();
     
     // Actualizar elementos de la página
-    document.title = `${productoActual.nombre} | BellaVita`;
-    productoImagen.src = productoActual.imagen;
-    productoImagen.alt = productoActual.nombre;
-    productoNombre.textContent = productoActual.nombre;
-    productoPrecio.textContent = `${productoActual.precio.toFixed(2)}€`;
-    productoVolumen.textContent = productoActual.volumen;
-    productoDescripcion.textContent = productoActual.descripcion;
-    productoIngredientes.textContent = productoActual.ingredientes;
-    productoUso.textContent = productoActual.uso;
+    document.title = `${window.productoActual.nombre} | BellaVita`;
+    productoImagen.src = window.productoActual.imagen;
+    productoImagen.alt = window.productoActual.nombre;
+    productoNombre.textContent = window.productoActual.nombre;
+    
+    // Comprobar si es un producto en promoción para mostrar el precio correctamente
+    if (window.productoActual.enPromocion) {
+      productoPrecio.innerHTML = `
+        <span class="precio-antiguo">${window.productoActual.precioOriginal.toFixed(2)}€</span>
+        <span>${window.productoActual.precio.toFixed(2)}€</span>
+        <span class="badge-descuento">${window.productoActual.descuento}</span>
+      `;
+    } else {
+      productoPrecio.textContent = `${window.productoActual.precio.toFixed(2)}€`;
+    }
+    
+    productoVolumen.textContent = window.productoActual.volumen;
+    productoDescripcion.textContent = window.productoActual.descripcion;
+    productoIngredientes.textContent = window.productoActual.ingredientes;
+    productoUso.textContent = window.productoActual.uso;
 
     aplicarEstilosTipoProducto();
   }
 
+  // Aplicar estilos según el tipo de producto (POR ELLAS, promoción, etc.)
   function aplicarEstilosTipoProducto() {
-  const body = document.getElementById('producto-detalle-body');
-  
-  // Limpiar clases previas
-  body.classList.remove('por-ellas-producto', 'promo-producto');
-  
-  // Verificar si es un producto POR ELLAS
-  if (productoActual.nombre.includes('POR ELLAS')) {
-    body.classList.add('por-ellas-producto');
-  }
-  
-  // Verificar si es un producto en promoción
-  if (productoActual.enPromocion) {
-    body.classList.add('promo-producto');
+    const body = document.getElementById('producto-detalle-body');
     
-    // Añadir elementos de promoción si es necesario
-    const precioElement = document.getElementById('producto-precio');
-    precioElement.innerHTML = `
-      <span class="precio-antiguo">${productoActual.precioOriginal}€</span>
-      <span>${productoActual.precio.toFixed(2)}€</span>
-      <span class="badge-descuento">${productoActual.descuento}</span>
-    `;
+    // Limpiar clases previas
+    body.classList.remove('por-ellas-producto', 'promo-producto');
+    
+    // Verificar si es un producto POR ELLAS
+    if (window.productoActual.nombre.includes('POR ELLAS')) {
+      body.classList.add('por-ellas-producto');
+    }
+    
+    // Verificar si es un producto en promoción
+    if (window.productoActual.enPromocion) {
+      body.classList.add('promo-producto');
+    }
   }
-}
 
   // Funcionalidad para compartir
   const compartirBtn = document.querySelector('.compartir-btn');
@@ -453,38 +238,6 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }
 
-  // Inicializaciones
-  cargarCarrito();
+  // Inicializar la página de detalle
   cargarDetallesProducto();
 });
-
-
-// Función para manejar el proceso de checkout
-function procesarCheckout() {
-  // Obtener el carrito actual
-  const carritoGuardado = localStorage.getItem('carritoProductos');
-  
-  if (!carritoGuardado || JSON.parse(carritoGuardado).productos.length === 0) {
-    // Si el carrito está vacío, mostrar mensaje
-    alert('Tu carrito está vacío. Añade productos antes de finalizar la compra.');
-    return;
-  }
-  
-  // Guardar el estado actual del carrito en sessionStorage para recuperarlo en la página de checkout
-  sessionStorage.setItem('checkoutCarrito', carritoGuardado);
-  
-  // Redirigir a la página de checkout
-  window.location.href = 'checkout.html';
-}
-
-// Asignar la función al botón de checkout
-const checkoutBtn = document.getElementById('checkout-btn');
-if (checkoutBtn) {
-  // Reemplazar el event listener existente con el nuevo
-  checkoutBtn.removeEventListener('click', function() {
-    alert('¡Finalizar compra! Aquí implementarías el proceso de checkout.');
-  });
-  
-  // Añadir el nuevo event listener
-  checkoutBtn.addEventListener('click', procesarCheckout);
-}

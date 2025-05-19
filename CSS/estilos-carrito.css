@@ -1,6 +1,4 @@
-/* estilos-carrito.css - Estilos para el carrito en todas las páginas */
-
-/* Carrito desplegable */
+/* Estilos para el carrito desplegable */
 .cart-sidebar {
   position: fixed;
   top: 0;
@@ -248,7 +246,6 @@
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  /* Asegurarse de que el contador está visible */
   z-index: 1001;
 }
 
@@ -269,10 +266,46 @@
   animation: addToCartAnimation 0.5s ease;
 }
 
+/* Estilos para productos con descuento en el carrito */
+.cart-price-old {
+  text-decoration: line-through;
+  color: #999;
+  font-size: 0.85rem;
+  margin-right: 5px;
+}
+
+.cart-price-new {
+  color: #ff3b30;
+  font-weight: bold;
+}
+
+.cart-discount-badge {
+  display: inline-block;
+  background-color: #ff3b30;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 10px;
+  margin-left: 5px;
+  vertical-align: middle;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .cart-sidebar {
     width: 100%;
     right: -100%;
   }
+}
+
+/* Estilos específicos para POR ELLAS */
+.porEllas-body .cart-sidebar .checkout-btn,
+body.por-ellas-producto .cart-sidebar .checkout-btn {
+  background-color: #d5bce4;
+}
+
+.porEllas-body .cart-sidebar .checkout-btn:hover,
+body.por-ellas-producto .cart-sidebar .checkout-btn:hover {
+  background-color: #c3a5d6;
 }

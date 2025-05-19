@@ -177,33 +177,38 @@
         </div>
     </section>
     <!-- Carrito desplegable -->
-      <div id="cart-sidebar" class="cart-sidebar">
-        <div class="cart-header">
-          <h3>Tu carrito</h3>
-          <button id="close-cart" class="close-cart">
-            <i class="fas fa-times"></i>
-          </button>
-        </div>
-        
-        <div id="cart-content" class="cart-content">
-          <!-- Si está vacío -->
-          <div id="empty-cart" class="empty-cart">
-            <p>Tu carrito está vacío</p>
+          <div id="cart-sidebar" class="cart-sidebar">
+            <div class="cart-header">
+              <h3>Tu carrito</h3>
+              <button id="close-cart" class="close-cart">
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+            
+            <div id="cart-content" class="cart-content">
+              <!-- Si está vacío -->
+              <div id="empty-cart" class="empty-cart">
+                <p>Tu carrito está vacío</p>
+              </div>
+              
+              <!-- Si tiene productos (inicialmente oculto) -->
+              <div id="cart-products" class="cart-products" style="display: none;">
+                <!-- Los productos se añadirán dinámicamente aquí -->
+              </div>
+            </div>
+            
+            <div class="cart-footer">
+              <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-price">0,00€</span>
+              </div>
+              <button id="checkout-btn" class="checkout-btn">Finalizar compra</button>
+              <button id="continue-shopping" class="continue-shopping">Continuar comprando</button>
+            </div>
           </div>
-          
-          <!-- Si tiene productos (inicialmente oculto) -->
-          <div id="cart-products" class="cart-products" style="display: none;">
-            <!-- Los productos se añadirán dinámicamente aquí -->
-          </div>
-        </div>
-        
-        <div class="cart-footer">
-          <button id="continue-shopping" class="continue-shopping">Continuar comprando</button>
-        </div>
-      </div>
 
-      <!-- Overlay para oscurecer el fondo cuando el carrito está abierto -->
-      <div id="cart-overlay" class="cart-overlay"></div>
+          <!-- Overlay para oscurecer el fondo cuando el carrito está abierto -->
+          <div id="cart-overlay" class="cart-overlay"></div>
 
       <script src="./JavaScript/carrito-global.js"></script>
   </main>

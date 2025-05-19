@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
+     <meta charset="UTF-8">
     <meta name="author" content="Mathieu Grisard Pelaez">
-    <title>BellaVita</title>
+    <title>Textos Legales | BellaVita</title>
     <link rel="icon" href="./Assets/iconos/logo-marca.ico">
     <link rel="stylesheet" href="./CSS/styles.css">
     <link rel="stylesheet" href="./CSS/estilos-carrito.css">
@@ -11,11 +11,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Belleza&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-    <a href="https://www.flaticon.com/free-icons/breast-cancer" title="breast cancer icons" crossorigin="Breast cancer icons created by Freepik - Flaticon"></a>
-    <script src="./JavaScript/carrito-global.js"></script>
-    <script defer src="./JavaScript/productos.js"></script>
-    <script src="./JavaScript/carrito-init.js"></script>
     <script defer src="./JavaScript/scripts.js"></script>
+    <script defer src="./JavaScript/carrito-init.js"></script>
+    <script defer src="./JavaScript/carrito-global.js"></script>
 </head>
 <body>
   <header>
@@ -211,34 +209,40 @@
                     </div>
                   </div>
 
-            <!-- Carrito desplegable -->
-                  <div id="cart-sidebar" class="cart-sidebar">
-                    <div class="cart-header">
-                      <h3>Tu carrito</h3>
-                      <button id="close-cart" class="close-cart">
-                        <i class="fas fa-times"></i>
-                      </button>
-                    </div>
-                    
-                    <div id="cart-content" class="cart-content">
-                      <!-- Si está vacío -->
-                      <div id="empty-cart" class="empty-cart">
-                        <p>Tu carrito está vacío</p>
-                      </div>
-                      
-                      <!-- Si tiene productos (inicialmente oculto) -->
-                      <div id="cart-products" class="cart-products" style="display: none;">
-                        <!-- Los productos se añadirán dinámicamente aquí -->
-                      </div>
-                    </div>
-                    
-                    <div class="cart-footer">
-                      <button id="continue-shopping" class="continue-shopping">Continuar comprando</button>
-                    </div>
-                  </div>
+        <!-- Carrito desplegable -->
+          <div id="cart-sidebar" class="cart-sidebar">
+            <div class="cart-header">
+              <h3>Tu carrito</h3>
+              <button id="close-cart" class="close-cart">
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+            
+            <div id="cart-content" class="cart-content">
+              <!-- Si está vacío -->
+              <div id="empty-cart" class="empty-cart">
+                <p>Tu carrito está vacío</p>
+              </div>
+              
+              <!-- Si tiene productos (inicialmente oculto) -->
+              <div id="cart-products" class="cart-products" style="display: none;">
+                <!-- Los productos se añadirán dinámicamente aquí -->
+              </div>
+            </div>
+            
+            <div class="cart-footer">
+              <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-price">0,00€</span>
+              </div>
+              <button id="checkout-btn" class="checkout-btn">Finalizar compra</button>
+              <button id="continue-shopping" class="continue-shopping">Continuar comprando</button>
+            </div>
+          </div>
 
-                  <!-- Overlay para oscurecer el fondo cuando el carrito está abierto -->
-                  <div id="cart-overlay" class="cart-overlay"></div>
+          <!-- Overlay para oscurecer el fondo cuando el carrito está abierto -->
+          <div id="cart-overlay" class="cart-overlay"></div>
+
       </main>
 
     <!-- Nuevo Footer-->
